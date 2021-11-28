@@ -223,7 +223,7 @@ class ChartingState extends MusicBeatState
 		DiscordClient.changePresence("Chart Editor", StringTools.replace(_song.song, '-', ' '));
 		#end
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.scrollFactor.set();
 		bg.color = 0xFF222222;
 		add(bg);
@@ -579,10 +579,6 @@ class ChartingState extends MusicBeatState
 		noteSkinInputText = new FlxUIInputText(player2DropDown.x, player2DropDown.y + 50, 150, skin, 8);
 		blockPressWhileTypingOn.push(noteSkinInputText);
 
-		var stepperDiffLoader:FlxUINumericStepper = new FlxUINumericStepper(100, stepperBPM.y, 1, 3, 0, 2, 1);
-		stepperDiffLoader.value = diff;
-		stepperDiffLoader.name = 'difficulty';
-
 		var stepperMania:FlxUINumericStepper = new FlxUINumericStepper(100, stepperSpeed.y, 1, 3, 0, 8, 1);
 		stepperMania.value = _song.mania;
 		stepperMania.name = 'mania';
@@ -614,14 +610,12 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(reloadNotesButton);
 		tab_group_song.add(noteSkinInputText);
 		tab_group_song.add(noteSplashesInputText);
-		tab_group_song.add(stepperDiffLoader);
 		tab_group_song.add(new FlxText(stepperBPM.x, stepperBPM.y - 15, 0, 'Song BPM:'));
 		tab_group_song.add(new FlxText(stepperSpeed.x, stepperSpeed.y - 15, 0, 'Song Speed:'));
 		tab_group_song.add(new FlxText(stepperMania.x, stepperMania.y - 15, 0, 'Mania:'));
 		tab_group_song.add(new FlxText(player2DropDown.x, player2DropDown.y - 15, 0, 'Opponent:'));
 		tab_group_song.add(new FlxText(player3DropDown.x, player3DropDown.y - 15, 0, 'Girlfriend:'));
 		tab_group_song.add(new FlxText(player1DropDown.x, player1DropDown.y - 15, 0, 'Boyfriend:'));
-		tab_group_song.add(new FlxText(stepperDiffLoader.x, stepperDiffLoader.y - 15, 0, 'Difficulty:'));
 		tab_group_song.add(new FlxText(stageDropDown.x, stageDropDown.y - 15, 0, 'Stage:'));
 		tab_group_song.add(new FlxText(noteSkinInputText.x, noteSkinInputText.y - 15, 0, 'Note Texture:'));
 		tab_group_song.add(new FlxText(noteSplashesInputText.x, noteSplashesInputText.y - 15, 0, 'Note Splashes Texture:'));
@@ -1111,10 +1105,6 @@ class ChartingState extends MusicBeatState
 			{
 				_song.mania = Std.int(nums.value);
 				reloadGridLayer();
-			}
-			else if (wname == 'difficulty')
-			{
-				diff = Std.int(nums.value);
 			}
 			else if (wname == 'note_susLength')
 			{
@@ -1623,9 +1613,7 @@ class ChartingState extends MusicBeatState
 		"\nSection: " + curSection +
 		"\n\nBeat: " + curBeat +
 		"\n\nStep: " + curStep +
-		"\n\nKeys: " + Note.NoteData.getAmmo(_song.mania) +
-		"\n" + CoolUtil.difficultyStuff[diff][1] +
-		"\n" + CoolUtil.difficultyStuff[diff][0];
+		"\n\nKeys: " + Note.NoteData.getAmmo(_song.mania);
 
 		var playedSound:Array<Bool> = [false, false, false, false]; //Prevents ouchy GF sex sounds
 		curRenderedNotes.forEachAlive(function(note:Note) {			//Prevents earrape GF ahegao sounds -bbpanzu is sex btw
@@ -1726,9 +1714,6 @@ class ChartingState extends MusicBeatState
 		gridLayer.clear();
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE + GRID_SIZE * Note.NoteData.getAmmo(_song.mania) * 2, Std.int(GRID_SIZE * 32 * curZoom));
 		gridLayer.add(gridBG);
-
-		FlxG.camera.zoom = maniaCamZoom[_song.mania];
-		bg.scale.set(bgScales[_song.mania], bgScales[_song.mania]);
 
 		#if desktop
 		if(waveformEnabled != null) {
