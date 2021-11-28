@@ -42,6 +42,137 @@ enum abstract Action(String) to String from String
 	var BACK = "back";
 	var PAUSE = "pause";
 	var RESET = "reset";
+
+	var ONE1 = 'one1';
+	var ONE1_P = 'one1-press';
+	var ONE1_R = 'one1-release';
+
+	var TWO1 = 'two1';
+	var TWO1_P = 'two1-press';
+	var TWO1_R = 'two1-release';
+	var TWO2 = 'two2';
+	var TWO2_P = 'two2-press';
+	var TWO2_R = 'two2-release';
+
+	var THREE1 = 'three1';
+	var THREE1_P = 'three1-press';
+	var THREE1_R = 'three1-release';
+	var THREE2 = 'three2';
+	var THREE2_P = 'three2-press';
+	var THREE2_R = 'three2-release';
+	var THREE3 = 'three3';
+	var THREE3_P = 'three3-press';
+	var THREE3_R = 'three3-release';
+
+	var FIVE1 = 'five1';
+	var FIVE1_P = 'five1-press';
+	var FIVE1_R = 'five1-release';
+	var FIVE2 = 'five2';
+	var FIVE2_P = 'five2-press';
+	var FIVE2_R = 'five2-release';
+	var FIVE3 = 'five3';
+	var FIVE3_P = 'five3-press';
+	var FIVE3_R = 'five3-release';
+	var FIVE4 = 'five4';
+	var FIVE4_P = 'five4-press';
+	var FIVE4_R = 'five4-release';
+	var FIVE5 = 'five5';
+	var FIVE5_P = 'five5-press';
+	var FIVE5_R = 'five5-release';
+
+	var SIX1 = 'six1';
+	var SIX1_P = 'six1-press';
+	var SIX1_R = 'six1-release';
+	var SIX2 = 'six2';
+	var SIX2_P = 'six2-press';
+	var SIX2_R = 'six2-release';
+	var SIX3 = 'six3';
+	var SIX3_P = 'six3-press';
+	var SIX3_R = 'six3-release';
+	var SIX4 = 'six4';
+	var SIX4_P = 'six4-press';
+	var SIX4_R = 'six4-release';
+	var SIX5 = 'six5';
+	var SIX5_P = 'six5-press';
+	var SIX5_R = 'six5-release';
+	var SIX6 = 'six6';
+	var SIX6_P = 'six6-press';
+	var SIX6_R = 'six6-release';
+
+	var SEVEN1 = 'seven1';
+	var SEVEN1_P = 'seven1-press';
+	var SEVEN1_R = 'seven1-release';
+	var SEVEN2 = 'seven2';
+	var SEVEN2_P = 'seven2-press';
+	var SEVEN2_R = 'seven2-release';
+	var SEVEN3 = 'seven3';
+	var SEVEN3_P = 'seven3-press';
+	var SEVEN3_R = 'seven3-release';
+	var SEVEN4 = 'seven4';
+	var SEVEN4_P = 'seven4-press';
+	var SEVEN4_R = 'seven4-release';
+	var SEVEN5 = 'seven5';
+	var SEVEN5_P = 'seven5-press';
+	var SEVEN5_R = 'seven5-release';
+	var SEVEN6 = 'seven6';
+	var SEVEN6_P = 'seven6-press';
+	var SEVEN6_R = 'seven6-release';
+	var SEVEN7 = 'seven7';
+	var SEVEN7_P = 'seven7-press';
+	var SEVEN7_R = 'seven7-release';
+
+	var EIGHT1 = 'eight1';
+	var EIGHT1_P = 'eight1-press';
+	var EIGHT1_R = 'eight1-release';
+	var EIGHT2 = 'eight2';
+	var EIGHT2_P = 'eight2-press';
+	var EIGHT2_R = 'eight2-release';
+	var EIGHT3 = 'eight3';
+	var EIGHT3_P = 'eight3-press';
+	var EIGHT3_R = 'eight3-release';
+	var EIGHT4 = 'eight4';
+	var EIGHT4_P = 'eight4-press';
+	var EIGHT4_R = 'eight4-release';
+	var EIGHT5 = 'eight5';
+	var EIGHT5_P = 'eight5-press';
+	var EIGHT5_R = 'eight5-release';
+	var EIGHT6 = 'eight6';
+	var EIGHT6_P = 'eight6-press';
+	var EIGHT6_R = 'eight6-release';
+	var EIGHT7 = 'eight7';
+	var EIGHT7_P = 'eight7-press';
+	var EIGHT7_R = 'eight7-release';
+	var EIGHT8 = 'eight8';
+	var EIGHT8_P = 'eight8-press';
+	var EIGHT8_R = 'eight8-release';
+
+	var NINE1 = 'nine1';
+	var NINE1_P = 'nine1-press';
+	var NINE1_R = 'nine1-release';
+	var NINE2 = 'nine2';
+	var NINE2_P = 'nine2-press';
+	var NINE2_R = 'nine2-release';
+	var NINE3 = 'nine3';
+	var NINE3_P = 'nine3-press';
+	var NINE3_R = 'nine3-release';
+	var NINE4 = 'nine4';
+	var NINE4_P = 'nine4-press';
+	var NINE4_R = 'nine4-release';
+	var NINE5 = 'nine5';
+	var NINE5_P = 'nine5-press';
+	var NINE5_R = 'nine5-release';
+	var NINE6 = 'nine6';
+	var NINE6_P = 'nine6-press';
+	var NINE6_R = 'nine6-release';
+	var NINE7 = 'nine7';
+	var NINE7_P = 'nine7-press';
+	var NINE7_R = 'nine7-release';
+	var NINE8 = 'nine8';
+	var NINE8_P = 'nine8-press';
+	var NINE8_R = 'nine8-release';
+	var NINE9 = 'nine9';
+	var NINE9_P = 'nine9-press';
+	var NINE9_R = 'nine9-release';
 }
 #else
 @:enum
@@ -75,6 +206,137 @@ abstract Action(String) to String from String
 	var BACK = "back";
 	var PAUSE = "pause";
 	var RESET = "reset";
+
+	var ONE1 = 'one1';
+	var ONE1_P = 'one1-press';
+	var ONE1_R = 'one1-release';
+
+	var TWO1 = 'two1';
+	var TWO1_P = 'two1-press';
+	var TWO1_R = 'two1-release';
+	var TWO2 = 'two2';
+	var TWO2_P = 'two2-press';
+	var TWO2_R = 'two2-release';
+
+	var THREE1 = 'three1';
+	var THREE1_P = 'three1-press';
+	var THREE1_R = 'three1-release';
+	var THREE2 = 'three2';
+	var THREE2_P = 'three2-press';
+	var THREE2_R = 'three2-release';
+	var THREE3 = 'three3';
+	var THREE3_P = 'three3-press';
+	var THREE3_R = 'three3-release';
+
+	var FIVE1 = 'five1';
+	var FIVE1_P = 'five1-press';
+	var FIVE1_R = 'five1-release';
+	var FIVE2 = 'five2';
+	var FIVE2_P = 'five2-press';
+	var FIVE2_R = 'five2-release';
+	var FIVE3 = 'five3';
+	var FIVE3_P = 'five3-press';
+	var FIVE3_R = 'five3-release';
+	var FIVE4 = 'five4';
+	var FIVE4_P = 'five4-press';
+	var FIVE4_R = 'five4-release';
+	var FIVE5 = 'five5';
+	var FIVE5_P = 'five5-press';
+	var FIVE5_R = 'five5-release';
+
+	var SIX1 = 'six1';
+	var SIX1_P = 'six1-press';
+	var SIX1_R = 'six1-release';
+	var SIX2 = 'six2';
+	var SIX2_P = 'six2-press';
+	var SIX2_R = 'six2-release';
+	var SIX3 = 'six3';
+	var SIX3_P = 'six3-press';
+	var SIX3_R = 'six3-release';
+	var SIX4 = 'six4';
+	var SIX4_P = 'six4-press';
+	var SIX4_R = 'six4-release';
+	var SIX5 = 'six5';
+	var SIX5_P = 'six5-press';
+	var SIX5_R = 'six5-release';
+	var SIX6 = 'six6';
+	var SIX6_P = 'six6-press';
+	var SIX6_R = 'six6-release';
+
+	var SEVEN1 = 'seven1';
+	var SEVEN1_P = 'seven1-press';
+	var SEVEN1_R = 'seven1-release';
+	var SEVEN2 = 'seven2';
+	var SEVEN2_P = 'seven2-press';
+	var SEVEN2_R = 'seven2-release';
+	var SEVEN3 = 'seven3';
+	var SEVEN3_P = 'seven3-press';
+	var SEVEN3_R = 'seven3-release';
+	var SEVEN4 = 'seven4';
+	var SEVEN4_P = 'seven4-press';
+	var SEVEN4_R = 'seven4-release';
+	var SEVEN5 = 'seven5';
+	var SEVEN5_P = 'seven5-press';
+	var SEVEN5_R = 'seven5-release';
+	var SEVEN6 = 'seven6';
+	var SEVEN6_P = 'seven6-press';
+	var SEVEN6_R = 'seven6-release';
+	var SEVEN7 = 'seven7';
+	var SEVEN7_P = 'seven7-press';
+	var SEVEN7_R = 'seven7-release';
+
+	var EIGHT1 = 'eight1';
+	var EIGHT1_P = 'eight1-press';
+	var EIGHT1_R = 'eight1-release';
+	var EIGHT2 = 'eight2';
+	var EIGHT2_P = 'eight2-press';
+	var EIGHT2_R = 'eight2-release';
+	var EIGHT3 = 'eight3';
+	var EIGHT3_P = 'eight3-press';
+	var EIGHT3_R = 'eight3-release';
+	var EIGHT4 = 'eight4';
+	var EIGHT4_P = 'eight4-press';
+	var EIGHT4_R = 'eight4-release';
+	var EIGHT5 = 'eight5';
+	var EIGHT5_P = 'eight5-press';
+	var EIGHT5_R = 'eight5-release';
+	var EIGHT6 = 'eight6';
+	var EIGHT6_P = 'eight6-press';
+	var EIGHT6_R = 'eight6-release';
+	var EIGHT7 = 'eight7';
+	var EIGHT7_P = 'eight7-press';
+	var EIGHT7_R = 'eight7-release';
+	var EIGHT8 = 'eight8';
+	var EIGHT8_P = 'eight8-press';
+	var EIGHT8_R = 'eight8-release';
+
+	var NINE1 = 'nine1';
+	var NINE1_P = 'nine1-press';
+	var NINE1_R = 'nine1-release';
+	var NINE2 = 'nine2';
+	var NINE2_P = 'nine2-press';
+	var NINE2_R = 'nine2-release';
+	var NINE3 = 'nine3';
+	var NINE3_P = 'nine3-press';
+	var NINE3_R = 'nine3-release';
+	var NINE4 = 'nine4';
+	var NINE4_P = 'nine4-press';
+	var NINE4_R = 'nine4-release';
+	var NINE5 = 'nine5';
+	var NINE5_P = 'nine5-press';
+	var NINE5_R = 'nine5-release';
+	var NINE6 = 'nine6';
+	var NINE6_P = 'nine6-press';
+	var NINE6_R = 'nine6-release';
+	var NINE7 = 'nine7';
+	var NINE7_P = 'nine7-press';
+	var NINE7_R = 'nine7-release';
+	var NINE8 = 'nine8';
+	var NINE8_P = 'nine8-press';
+	var NINE8_R = 'nine8-release';
+	var NINE9 = 'nine9';
+	var NINE9_P = 'nine9-press';
+	var NINE9_R = 'nine9-release';
 }
 #end
 
@@ -103,6 +365,24 @@ enum Control
 	ACCEPT;
 	BACK;
 	PAUSE;
+	
+	A1;
+	A2;
+	A3;
+	A4;
+	A5;
+	A6;
+	A7;
+
+	B1;
+	B2;
+	B3;
+	B4;
+	B5;
+	B6;
+	B7;
+	B8;
+	B9;
 }
 
 enum KeyboardScheme
@@ -116,6 +396,16 @@ enum KeyboardScheme
 /**
  * A list of actions that a player would invoke via some input device.
  * Uses FlxActions to funnel various inputs to a single action.
+ * 
+ * btw zoro is noob
+ * he uses like 3 more functions
+ * over here we swag with the ultra complicated
+ * flx action set controls code
+ * 
+ * :getfake:
+ * 
+ * I ALSO TOOK THE TIME TO MAKE CONTROLS FOR EACH AMMO
+ * PLEASE CREDIT ME I FEEL DEAD
  */
 class Controls extends FlxActionSet
 {
@@ -147,6 +437,137 @@ class Controls extends FlxActionSet
 	var _back = new FlxActionDigital(Action.BACK);
 	var _pause = new FlxActionDigital(Action.PAUSE);
 	var _reset = new FlxActionDigital(Action.RESET);
+
+	var _one1 = new FlxActionDigital(Action.ONE1);
+	var _one1P = new FlxActionDigital(Action.ONE1_P);
+	var _one1R = new FlxActionDigital(Action.ONE1_R);
+
+	var _two1 = new FlxActionDigital(Action.TWO1);
+	var _two1P = new FlxActionDigital(Action.TWO1_P);
+	var _two1R = new FlxActionDigital(Action.TWO1_R);
+	var _two2 = new FlxActionDigital(Action.TWO2);
+	var _two2P = new FlxActionDigital(Action.TWO2_P);
+	var _two2R = new FlxActionDigital(Action.TWO2_R);
+
+	var _three1 = new FlxActionDigital(Action.THREE1);
+	var _three1P = new FlxActionDigital(Action.THREE1_P);
+	var _three1R = new FlxActionDigital(Action.THREE1_R);
+	var _three2 = new FlxActionDigital(Action.THREE2);
+	var _three2P = new FlxActionDigital(Action.THREE2_P);
+	var _three2R = new FlxActionDigital(Action.THREE2_R);
+	var _three3 = new FlxActionDigital(Action.THREE3);
+	var _three3P = new FlxActionDigital(Action.THREE3_P);
+	var _three3R = new FlxActionDigital(Action.THREE3_R);
+
+	var _five1 = new FlxActionDigital(Action.FIVE1);
+	var _five1P = new FlxActionDigital(Action.FIVE1_P);
+	var _five1R = new FlxActionDigital(Action.FIVE1_R);
+	var _five2 = new FlxActionDigital(Action.FIVE2);
+	var _five2P = new FlxActionDigital(Action.FIVE2_P);
+	var _five2R = new FlxActionDigital(Action.FIVE2_R);
+	var _five3 = new FlxActionDigital(Action.FIVE3);
+	var _five3P = new FlxActionDigital(Action.FIVE3_P);
+	var _five3R = new FlxActionDigital(Action.FIVE3_R);
+	var _five4 = new FlxActionDigital(Action.FIVE4);
+	var _five4P = new FlxActionDigital(Action.FIVE4_P);
+	var _five4R = new FlxActionDigital(Action.FIVE4_R);
+	var _five5 = new FlxActionDigital(Action.FIVE5);
+	var _five5P = new FlxActionDigital(Action.FIVE5_P);
+	var _five5R = new FlxActionDigital(Action.FIVE5_R);
+
+	var _six1 = new FlxActionDigital(Action.SIX1);
+	var _six1P = new FlxActionDigital(Action.SIX1_P);
+	var _six1R = new FlxActionDigital(Action.SIX1_R);
+	var _six2 = new FlxActionDigital(Action.SIX2);
+	var _six2P = new FlxActionDigital(Action.SIX2_P);
+	var _six2R = new FlxActionDigital(Action.SIX2_R);
+	var _six3 = new FlxActionDigital(Action.SIX3);
+	var _six3P = new FlxActionDigital(Action.SIX3_P);
+	var _six3R = new FlxActionDigital(Action.SIX3_R);
+	var _six4 = new FlxActionDigital(Action.SIX4);
+	var _six4P = new FlxActionDigital(Action.SIX4_P);
+	var _six4R = new FlxActionDigital(Action.SIX4_R);
+	var _six5 = new FlxActionDigital(Action.SIX5);
+	var _six5P = new FlxActionDigital(Action.SIX5_P);
+	var _six5R = new FlxActionDigital(Action.SIX5_R);
+	var _six6 = new FlxActionDigital(Action.SIX6);
+	var _six6P = new FlxActionDigital(Action.SIX6_P);
+	var _six6R = new FlxActionDigital(Action.SIX6_R);
+
+	var _sev1 = new FlxActionDigital(Action.SEVEN1);
+	var _sev1P = new FlxActionDigital(Action.SEVEN1_P);
+	var _sev1R = new FlxActionDigital(Action.SEVEN1_R);
+	var _sev2 = new FlxActionDigital(Action.SEVEN2);
+	var _sev2P = new FlxActionDigital(Action.SEVEN2_P);
+	var _sev2R = new FlxActionDigital(Action.SEVEN2_R);
+	var _sev3 = new FlxActionDigital(Action.SEVEN3);
+	var _sev3P = new FlxActionDigital(Action.SEVEN3_P);
+	var _sev3R = new FlxActionDigital(Action.SEVEN3_R);
+	var _sev4 = new FlxActionDigital(Action.SEVEN4);
+	var _sev4P = new FlxActionDigital(Action.SEVEN4_P);
+	var _sev4R = new FlxActionDigital(Action.SEVEN4_R);
+	var _sev5 = new FlxActionDigital(Action.SEVEN5);
+	var _sev5P = new FlxActionDigital(Action.SEVEN5_P);
+	var _sev5R = new FlxActionDigital(Action.SEVEN5_R);
+	var _sev6 = new FlxActionDigital(Action.SEVEN6);
+	var _sev6P = new FlxActionDigital(Action.SEVEN6_P);
+	var _sev6R = new FlxActionDigital(Action.SEVEN6_R);
+	var _sev7 = new FlxActionDigital(Action.SEVEN7);
+	var _sev7P = new FlxActionDigital(Action.SEVEN7_P);
+	var _sev7R = new FlxActionDigital(Action.SEVEN7_R);
+
+	var _eig1 = new FlxActionDigital(Action.EIGHT1);
+	var _eig1P = new FlxActionDigital(Action.EIGHT1_P);
+	var _eig1R = new FlxActionDigital(Action.EIGHT1_R);
+	var _eig2 = new FlxActionDigital(Action.EIGHT2);
+	var _eig2P = new FlxActionDigital(Action.EIGHT2_P);
+	var _eig2R = new FlxActionDigital(Action.EIGHT2_R);
+	var _eig3 = new FlxActionDigital(Action.EIGHT3);
+	var _eig3P = new FlxActionDigital(Action.EIGHT3_P);
+	var _eig3R = new FlxActionDigital(Action.EIGHT3_R);
+	var _eig4 = new FlxActionDigital(Action.EIGHT4);
+	var _eig4P = new FlxActionDigital(Action.EIGHT4_P);
+	var _eig4R = new FlxActionDigital(Action.EIGHT4_R);
+	var _eig5 = new FlxActionDigital(Action.EIGHT5);
+	var _eig5P = new FlxActionDigital(Action.EIGHT5_P);
+	var _eig5R = new FlxActionDigital(Action.EIGHT5_R);
+	var _eig6 = new FlxActionDigital(Action.EIGHT6);
+	var _eig6P = new FlxActionDigital(Action.EIGHT6_P);
+	var _eig6R = new FlxActionDigital(Action.EIGHT6_R);
+	var _eig7 = new FlxActionDigital(Action.EIGHT7);
+	var _eig7P = new FlxActionDigital(Action.EIGHT7_P);
+	var _eig7R = new FlxActionDigital(Action.EIGHT7_R);
+	var _eig8 = new FlxActionDigital(Action.EIGHT8);
+	var _eig8P = new FlxActionDigital(Action.EIGHT8_P);
+	var _eig8R = new FlxActionDigital(Action.EIGHT8_R);
+
+	var _nin1 = new FlxActionDigital(Action.NINE1);
+	var _nin1P = new FlxActionDigital(Action.NINE1_P);
+	var _nin1R = new FlxActionDigital(Action.NINE1_R);
+	var _nin2 = new FlxActionDigital(Action.NINE2);
+	var _nin2P = new FlxActionDigital(Action.NINE2_P);
+	var _nin2R = new FlxActionDigital(Action.NINE2_R);
+	var _nin3 = new FlxActionDigital(Action.NINE3);
+	var _nin3P = new FlxActionDigital(Action.NINE3_P);
+	var _nin3R = new FlxActionDigital(Action.NINE3_R);
+	var _nin4 = new FlxActionDigital(Action.NINE4);
+	var _nin4P = new FlxActionDigital(Action.NINE4_P);
+	var _nin4R = new FlxActionDigital(Action.NINE4_R);
+	var _nin5 = new FlxActionDigital(Action.NINE5);
+	var _nin5P = new FlxActionDigital(Action.NINE5_P);
+	var _nin5R = new FlxActionDigital(Action.NINE5_R);
+	var _nin6 = new FlxActionDigital(Action.NINE6);
+	var _nin6P = new FlxActionDigital(Action.NINE6_P);
+	var _nin6R = new FlxActionDigital(Action.NINE6_R);
+	var _nin7 = new FlxActionDigital(Action.NINE7);
+	var _nin7P = new FlxActionDigital(Action.NINE7_P);
+	var _nin7R = new FlxActionDigital(Action.NINE7_R);
+	var _nin8 = new FlxActionDigital(Action.NINE8);
+	var _nin8P = new FlxActionDigital(Action.NINE8_P);
+	var _nin8R = new FlxActionDigital(Action.NINE8_R);
+	var _nin9 = new FlxActionDigital(Action.NINE9);
+	var _nin9P = new FlxActionDigital(Action.NINE9_P);
+	var _nin9R = new FlxActionDigital(Action.NINE9_R);
 
 	#if (haxe >= "4.0.0")
 	var byName:Map<String, FlxActionDigital> = [];
@@ -297,6 +718,84 @@ class Controls extends FlxActionSet
 	inline function get_RESET()
 		return _reset.check();
 
+	public var ONE1(get, never):Bool; inline function get_ONE1() {return _one1.check();}
+	public var ONE1_P(get, never):Bool; inline function get_ONE1_P() {return _one1P.check();}
+	public var ONE1_R(get, never):Bool; inline function get_ONE1_R() {return _one1R.check();}
+
+	public var TWO1(get, never):Bool; inline function get_TWO1() {return _two1.check();}
+	public var TWO1_P(get, never):Bool; inline function get_TWO1_P() {return _two1P.check();}
+	public var TWO1_R(get, never):Bool; inline function get_TWO1_R() {return _two1R.check();}
+	public var TWO2(get, never):Bool; inline function get_TWO2() {return _two2.check();}
+	public var TWO2_P(get, never):Bool; inline function get_TWO2_P() {return _two1P.check();}
+	public var TWO2_R(get, never):Bool; inline function get_TWO2_R() {return _two1R.check();}
+
+	public var THREE1(get, never):Bool; inline function get_THREE1() {return _three1.check();}
+	public var THREE1_P(get, never):Bool; inline function get_THREE1_P() {return _three1P.check();}
+	public var THREE1_R(get, never):Bool; inline function get_THREE1_R() {return _three1R.check();}
+	public var THREE2(get, never):Bool; inline function get_THREE2() {return _three2.check();}
+	public var THREE2_P(get, never):Bool; inline function get_THREE2_P() {return _three2P.check();}
+	public var THREE2_R(get, never):Bool; inline function get_THREE2_R() {return _three2R.check();}
+	public var THREE3(get, never):Bool; inline function get_THREE3() {return _three3.check();}
+	public var THREE3_P(get, never):Bool; inline function get_THREE3_P() {return _three3P.check();}
+	public var THREE3_R(get, never):Bool; inline function get_THREE3_R() {return _three3R.check();}
+
+	public var FIVE1(get, never):Bool; inline function get_FIVE1() {return _five1.check();}
+	public var FIVE1_P(get, never):Bool; inline function get_FIVE1_P() {return _five1P.check();}
+	public var FIVE1_R(get, never):Bool; inline function get_FIVE1_R() {return _five1R.check();}
+	public var FIVE2(get, never):Bool; inline function get_FIVE2() {return _five2.check();}
+	public var FIVE2_P(get, never):Bool; inline function get_FIVE2_P() {return _five2P.check();}
+	public var FIVE2_R(get, never):Bool; inline function get_FIVE2_R() {return _five2R.check();}
+	public var FIVE3(get, never):Bool; inline function get_FIVE3() {return _five3.check();}
+	public var FIVE3_P(get, never):Bool; inline function get_FIVE3_P() {return _five3P.check();}
+	public var FIVE3_R(get, never):Bool; inline function get_FIVE3_R() {return _five3R.check();}
+	public var FIVE4(get, never):Bool; inline function get_FIVE4() {return _five4.check();}
+	public var FIVE4_P(get, never):Bool; inline function get_FIVE4_P() {return _five4P.check();}
+	public var FIVE4_R(get, never):Bool; inline function get_FIVE4_R() {return _five4R.check();}
+	public var FIVE5(get, never):Bool; inline function get_FIVE5() {return _five5.check();}
+	public var FIVE5_P(get, never):Bool; inline function get_FIVE5_P() {return _five5P.check();}
+	public var FIVE5_R(get, never):Bool; inline function get_FIVE5_R() {return _five5R.check();}
+
+	public var SIX1(get, never):Bool; inline function get_SIX1() {return _six1.check();}
+	public var SIX1_P(get, never):Bool; inline function get_SIX1_P() {return _six1P.check();}
+	public var SIX1_R(get, never):Bool; inline function get_SIX1_R() {return _six1R.check();}
+	public var SIX2(get, never):Bool; inline function get_SIX2() {return _six2.check();}
+	public var SIX2_P(get, never):Bool; inline function get_SIX2_P() {return _six2P.check();}
+	public var SIX2_R(get, never):Bool; inline function get_SIX2_R() {return _six2R.check();}
+	public var SIX3(get, never):Bool; inline function get_SIX3() {return _six3.check();}
+	public var SIX3_P(get, never):Bool; inline function get_SIX3_P() {return _six3P.check();}
+	public var SIX3_R(get, never):Bool; inline function get_SIX3_R() {return _six3R.check();}
+	public var SIX4(get, never):Bool; inline function get_SIX4() {return _six4.check();}
+	public var SIX4_P(get, never):Bool; inline function get_SIX4_P() {return _six4P.check();}
+	public var SIX4_R(get, never):Bool; inline function get_SIX4_R() {return _six4R.check();}
+	public var SIX5(get, never):Bool; inline function get_SIX5() {return _six5.check();}
+	public var SIX5_P(get, never):Bool; inline function get_SIX5_P() {return _six5P.check();}
+	public var SIX5_R(get, never):Bool; inline function get_SIX5_R() {return _six5R.check();}
+	public var SIX6(get, never):Bool; inline function get_SIX6() {return _six6.check();}
+	public var SIX6_P(get, never):Bool; inline function get_SIX6_P() {return _six6P.check();}
+	public var SIX6_R(get, never):Bool; inline function get_SIX6_R() {return _six6R.check();}
+
+	public var SEVEN1(get, never):Bool; inline function get_SEVEN1() {return _sev1.check();}
+	public var SEVEN1_P(get, never):Bool; inline function get_SEVEN1_P() {return _sev1P.check();}
+	public var SEVEN1_R(get, never):Bool; inline function get_SEVEN1_R() {return _sev1R.check();}
+	public var SEVEN2(get, never):Bool; inline function get_SEVEN2() {return _sev2.check();}
+	public var SEVEN2_P(get, never):Bool; inline function get_SEVEN2_P() {return _sev2P.check();}
+	public var SEVEN2_R(get, never):Bool; inline function get_SEVEN2_R() {return _sev2R.check();}
+	public var SEVEN3(get, never):Bool; inline function get_SEVEN3() {return _sev3.check();}
+	public var SEVEN3_P(get, never):Bool; inline function get_SEVEN3_P() {return _sev3P.check();}
+	public var SEVEN3_R(get, never):Bool; inline function get_SEVEN3_R() {return _sev3R.check();}
+	public var SEVEN4(get, never):Bool; inline function get_SEVEN4() {return _sev4.check();}
+	public var SEVEN4_P(get, never):Bool; inline function get_SEVEN4_P() {return _sev4P.check();}
+	public var SEVEN4_R(get, never):Bool; inline function get_SEVEN4_R() {return _sev4R.check();}
+	public var SEVEN5(get, never):Bool; inline function get_SEVEN5() {return _sev5.check();}
+	public var SEVEN5_P(get, never):Bool; inline function get_SEVEN5_P() {return _sev5P.check();}
+	public var SEVEN5_R(get, never):Bool; inline function get_SEVEN5_R() {return _sev5R.check();}
+	public var SEVEN6(get, never):Bool; inline function get_SEVEN6() {return _sev6.check();}
+	public var SEVEN6_P(get, never):Bool; inline function get_SEVEN6_P() {return _sev6P.check();}
+	public var SEVEN6_R(get, never):Bool; inline function get_SEVEN6_R() {return _sev6R.check();}
+	public var SEVEN7(get, never):Bool; inline function get_SEVEN7() {return _sev7.check();}
+	public var SEVEN7_P(get, never):Bool; inline function get_SEVEN7_P() {return _sev7P.check();}
+	public var SEVEN7_R(get, never):Bool; inline function get_SEVEN7_R() {return _sev7R.check();}
+	
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
 	{
@@ -330,7 +829,7 @@ class Controls extends FlxActionSet
 		add(_back);
 		add(_pause);
 		add(_reset);
-
+		
 		for (action in digitalActions)
 			byName[action.name] = action;
 
@@ -369,6 +868,61 @@ class Controls extends FlxActionSet
 		add(_back);
 		add(_pause);
 		add(_reset);
+		
+		add(_a1);
+		add(_a2);
+		add(_a3);
+		add(_a4);
+		add(_a5);
+		add(_a6);
+		add(_a7);
+
+		add(_a1P);
+		add(_a2P);
+		add(_a3P);
+		add(_a4P);
+		add(_a5P);
+		add(_a6P);
+		add(_a7P);
+
+		add(_a1R);
+		add(_a2R);
+		add(_a3R);
+		add(_a4R);
+		add(_a5R);
+		add(_a6R);
+		add(_a7R);
+
+
+		add(_b1);
+		add(_b2);
+		add(_b3);
+		add(_b4);
+		add(_b5);
+		add(_b6);
+		add(_b7);
+		add(_b8);
+		add(_b9);
+
+		add(_b1P);
+		add(_b2P);
+		add(_b3P);
+		add(_b4P);
+		add(_b5P);
+		add(_b6P);
+		add(_b7P);
+		add(_b8P);
+		add(_b9P);
+
+		add(_b1R);
+		add(_b2R);
+		add(_b3R);
+		add(_b4R);
+		add(_b5R);
+		add(_b6R);
+		add(_b7R);
+		add(_b8R);
+		add(_b9R);
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -426,6 +980,27 @@ class Controls extends FlxActionSet
 			case BACK: _back;
 			case PAUSE: _pause;
 			case RESET: _reset;
+		
+			/*
+			case A1: _a1;
+			case A2: _a2;
+			case A3: _a3;
+			case A4: _a4;
+			case A5: _a5;
+			case A6: _a6;
+			case A7: _a7;
+
+
+			case B1: _b1;
+			case B2: _b2;
+			case B3: _b3;
+			case B4: _b4;
+			case B5: _b5;
+			case B6: _b6;
+			case B7: _b7;
+			case B8: _b8;
+			case B9: _b9;
+			*/
 		}
 	}
 
@@ -485,6 +1060,75 @@ class Controls extends FlxActionSet
 				func(_pause, JUST_PRESSED);
 			case RESET:
 				func(_reset, JUST_PRESSED);
+
+				/*
+			case A1:
+				func(_a1, PRESSED);
+				func(_a1P, JUST_PRESSED);
+				func(_a1R, JUST_RELEASED);
+			case A2:
+				func(_a2, PRESSED);
+				func(_a2P, JUST_PRESSED);
+				func(_a2R, JUST_RELEASED);
+			case A3:
+				func(_a3, PRESSED);
+				func(_a3P, JUST_PRESSED);
+				func(_a3R, JUST_RELEASED);
+			case A4:
+				func(_a4, PRESSED);
+				func(_a4P, JUST_PRESSED);
+				func(_a4R, JUST_RELEASED);
+			case A5:
+				func(_a5, PRESSED);
+				func(_a5P, JUST_PRESSED);
+				func(_a5R, JUST_RELEASED);
+			case A6:
+				func(_a6, PRESSED);
+				func(_a6P, JUST_PRESSED);
+				func(_a6R, JUST_RELEASED);
+			case A7:
+				func(_a7, PRESSED);
+				func(_a7P, JUST_PRESSED);
+				func(_a7R, JUST_RELEASED);
+
+
+			case B1:
+				func(_b1, PRESSED);
+				func(_b1P, JUST_PRESSED);
+				func(_b1R, JUST_RELEASED);
+			case B2:
+				func(_b2, PRESSED);
+				func(_b2P, JUST_PRESSED);
+				func(_b2R, JUST_RELEASED);
+			case B3:
+				func(_b3, PRESSED);
+				func(_b3P, JUST_PRESSED);
+				func(_b3R, JUST_RELEASED);
+			case B4:
+				func(_b4, PRESSED);
+				func(_b4P, JUST_PRESSED);
+				func(_b4R, JUST_RELEASED);
+			case B5:
+				func(_b5, PRESSED);
+				func(_b5P, JUST_PRESSED);
+				func(_b5R, JUST_RELEASED);
+			case B6:
+				func(_b6, PRESSED);
+				func(_b6P, JUST_PRESSED);
+				func(_b6R, JUST_RELEASED);
+			case B7:
+				func(_b7, PRESSED);
+				func(_b7P, JUST_PRESSED);
+				func(_b7R, JUST_RELEASED);
+			case B8:
+				func(_b8, PRESSED);
+				func(_b8P, JUST_PRESSED);
+				func(_b8R, JUST_RELEASED);
+			case B9:
+				func(_b9, PRESSED);
+				func(_b9P, JUST_PRESSED);
+				func(_b9R, JUST_RELEASED);
+				*/
 		}
 	}
 
@@ -653,6 +1297,24 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.BACK, keysMap.get('back'));
 				inline bindKeys(Control.PAUSE, keysMap.get('pause'));
 				inline bindKeys(Control.RESET, keysMap.get('reset'));
+
+				inline bindKeys(Control.A1, keysMap.get('note_a1'));
+				inline bindKeys(Control.A2, keysMap.get('note_a2'));
+				inline bindKeys(Control.A3, keysMap.get('note_a3'));
+				inline bindKeys(Control.A4, keysMap.get('note_a4'));
+				inline bindKeys(Control.A5, keysMap.get('note_a5'));
+				inline bindKeys(Control.A6, keysMap.get('note_a6'));
+				inline bindKeys(Control.A7, keysMap.get('note_a7'));
+				
+				inline bindKeys(Control.B1, keysMap.get('note_b1'));
+				inline bindKeys(Control.B2, keysMap.get('note_b2'));
+				inline bindKeys(Control.B3, keysMap.get('note_b3'));
+				inline bindKeys(Control.B4, keysMap.get('note_b4'));
+				inline bindKeys(Control.B5, keysMap.get('note_b5'));
+				inline bindKeys(Control.B6, keysMap.get('note_b6'));
+				inline bindKeys(Control.B7, keysMap.get('note_b7'));
+				inline bindKeys(Control.B8, keysMap.get('note_b8'));
+				inline bindKeys(Control.B9, keysMap.get('note_b9'));
 			case Duo(true):
 				inline bindKeys(Control.UI_UP, [W]);
 				inline bindKeys(Control.UI_DOWN, [S]);
@@ -666,6 +1328,25 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.BACK, [H, X]);
 				inline bindKeys(Control.PAUSE, [ONE]);
 				inline bindKeys(Control.RESET, [R]);
+
+				/*
+				inline bindKeys(Control.A1, [S]);
+				inline bindKeys(Control.A2, [D]);
+				inline bindKeys(Control.A3, [F]);
+				inline bindKeys(Control.A4, [SPACE]);
+				inline bindKeys(Control.A5, [J]);
+				inline bindKeys(Control.A6, [K]);
+				inline bindKeys(Control.A7, [L]);
+				
+				inline bindKeys(Control.B1, [A]);
+				inline bindKeys(Control.B2, [S]);
+				inline bindKeys(Control.B3, [D]);
+				inline bindKeys(Control.B4, [F]);
+				inline bindKeys(Control.B5, [SPACE]);
+				inline bindKeys(Control.B6, [H]);
+				inline bindKeys(Control.B7, [J]);
+				inline bindKeys(Control.B8, [K]);
+				inline bindKeys(Control.B9, [L]);*/
 			case Duo(false):
 				inline bindKeys(Control.UI_UP, [FlxKey.UP]);
 				inline bindKeys(Control.UI_DOWN, [FlxKey.DOWN]);
@@ -679,6 +1360,25 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.BACK, [P]);
 				inline bindKeys(Control.PAUSE, [ENTER]);
 				inline bindKeys(Control.RESET, [BACKSPACE]);
+				
+				/*
+				inline bindKeys(Control.A1, [S]);
+				inline bindKeys(Control.A2, [D]);
+				inline bindKeys(Control.A3, [F]);
+				inline bindKeys(Control.A4, [SPACE]);
+				inline bindKeys(Control.A5, [J]);
+				inline bindKeys(Control.A6, [K]);
+				inline bindKeys(Control.A7, [L]);
+				
+				inline bindKeys(Control.B1, [A]);
+				inline bindKeys(Control.B2, [S]);
+				inline bindKeys(Control.B3, [D]);
+				inline bindKeys(Control.B4, [F]);
+				inline bindKeys(Control.B5, [SPACE]);
+				inline bindKeys(Control.B6, [H]);
+				inline bindKeys(Control.B7, [J]);
+				inline bindKeys(Control.B8, [K]);
+				inline bindKeys(Control.B9, [L]);*/
 			case None: // nothing
 			case Custom: // nothing
 		}
@@ -698,6 +1398,26 @@ class Controls extends FlxActionSet
 				bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
 				bindKeys(Control.RESET, [R]);
+
+				/*
+				bindKeys(Control.A1, [S]);
+				bindKeys(Control.A2, [D]);
+				bindKeys(Control.A3, [F]);
+				bindKeys(Control.A4, [SPACE]);
+				bindKeys(Control.A5, [J]);
+				bindKeys(Control.A6, [K]);
+				bindKeys(Control.A7, [L]);
+				
+				bindKeys(Control.B1, [A]);
+				bindKeys(Control.B2, [S]);
+				bindKeys(Control.B3, [D]);
+				bindKeys(Control.B4, [F]);
+				bindKeys(Control.B5, [SPACE]);
+				bindKeys(Control.B6, [H]);
+				bindKeys(Control.B7, [J]);
+				bindKeys(Control.B8, [K]);
+				bindKeys(Control.B9, [L]);
+				*/
 			case Duo(true):
 				bindKeys(Control.UI_UP, [W]);
 				bindKeys(Control.UI_DOWN, [S]);
@@ -711,6 +1431,24 @@ class Controls extends FlxActionSet
 				bindKeys(Control.BACK, [H, X]);
 				bindKeys(Control.PAUSE, [ONE]);
 				bindKeys(Control.RESET, [R]);
+
+				bindKeys(Control.A1, [S]);
+				bindKeys(Control.A2, [D]);
+				bindKeys(Control.A3, [F]);
+				bindKeys(Control.A4, [SPACE]);
+				bindKeys(Control.A5, [J]);
+				bindKeys(Control.A6, [K]);
+				bindKeys(Control.A7, [L]);
+				
+				bindKeys(Control.B1, [A]);
+				bindKeys(Control.B2, [S]);
+				bindKeys(Control.B3, [D]);
+				bindKeys(Control.B4, [F]);
+				bindKeys(Control.B5, [SPACE]);
+				bindKeys(Control.B6, [H]);
+				bindKeys(Control.B7, [J]);
+				bindKeys(Control.B8, [K]);
+				bindKeys(Control.B9, [L]);
 			case Duo(false):
 				bindKeys(Control.UI_UP, [FlxKey.UP]);
 				bindKeys(Control.UI_DOWN, [FlxKey.DOWN]);
@@ -724,6 +1462,24 @@ class Controls extends FlxActionSet
 				bindKeys(Control.BACK, [P]);
 				bindKeys(Control.PAUSE, [ENTER]);
 				bindKeys(Control.RESET, [BACKSPACE]);
+
+				bindKeys(Control.A1, [S]);
+				bindKeys(Control.A2, [D]);
+				bindKeys(Control.A3, [F]);
+				bindKeys(Control.A4, [SPACE]);
+				bindKeys(Control.A5, [J]);
+				bindKeys(Control.A6, [K]);
+				bindKeys(Control.A7, [L]);
+				
+				bindKeys(Control.B1, [A]);
+				bindKeys(Control.B2, [S]);
+				bindKeys(Control.B3, [D]);
+				bindKeys(Control.B4, [F]);
+				bindKeys(Control.B5, [SPACE]);
+				bindKeys(Control.B6, [H]);
+				bindKeys(Control.B7, [J]);
+				bindKeys(Control.B8, [K]);
+				bindKeys(Control.B9, [L]);
 			case None: // nothing
 			case Custom: // nothing
 		}
@@ -801,11 +1557,29 @@ class Controls extends FlxActionSet
 			Control.NOTE_LEFT => [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT],
 			Control.NOTE_RIGHT => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
 			Control.PAUSE => [START],
-			Control.RESET => [8]
+			Control.RESET => [8],
+
+			Control.A1 => [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT],
+			Control.A2 => [DPAD_UP, LEFT_STICK_DIGITAL_UP],
+			Control.A3 => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
+			Control.A4 => [LEFT_STICK_CLICK, RIGHT_STICK_CLICK],
+			Control.A5 => [X, RIGHT_STICK_DIGITAL_LEFT],
+			Control.A6 => [A, RIGHT_STICK_DIGITAL_DOWN],
+			Control.A7 => [B, RIGHT_STICK_DIGITAL_RIGHT],
+
+			Control.B1 => [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT],
+			Control.B2 => [DPAD_DOWN, LEFT_STICK_DIGITAL_DOWN],
+			Control.B3 => [DPAD_UP, LEFT_STICK_DIGITAL_UP],
+			Control.B4 => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
+			Control.B5 => [LEFT_STICK_CLICK, RIGHT_STICK_CLICK],
+			Control.B6 => [X, RIGHT_STICK_DIGITAL_LEFT],
+			Control.B7 => [A, RIGHT_STICK_DIGITAL_DOWN],
+			Control.B8 => [B, RIGHT_STICK_DIGITAL_UP],
+			Control.B9 => [Y, RIGHT_STICK_DIGITAL_RIGHT]
 		]);
 		#else
 		addGamepadLiteral(id, [
-			//Swap A and B for switch
+			//Swap A and B for switch -Also the Y and X
 			Control.ACCEPT => [B],
 			Control.BACK => [A],
 			Control.UI_UP => [DPAD_UP, LEFT_STICK_DIGITAL_UP, RIGHT_STICK_DIGITAL_UP],
@@ -818,6 +1592,24 @@ class Controls extends FlxActionSet
 			Control.NOTE_RIGHT => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT, RIGHT_STICK_DIGITAL_RIGHT],
 			Control.PAUSE => [START],
 			Control.RESET => [8],
+
+			Control.A1 => [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT],
+			Control.A2 => [DPAD_UP, LEFT_STICK_DIGITAL_UP],
+			Control.A3 => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
+			Control.A4 => [LEFT_STICK_CLICK, RIGHT_STICK_CLICK],
+			Control.A5 => [Y, RIGHT_STICK_DIGITAL_LEFT],
+			Control.A6 => [B, RIGHT_STICK_DIGITAL_DOWN],
+			Control.A7 => [A, RIGHT_STICK_DIGITAL_RIGHT]
+
+			Control.B1 => [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT],
+			Control.B2 => [DPAD_DOWN, LEFT_STICK_DIGITAL_DOWN],
+			Control.B3 => [DPAD_UP, LEFT_STICK_DIGITAL_UP],
+			Control.B4 => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
+			Control.B5 => [LEFT_STICK_CLICK, RIGHT_STICK_CLICK],
+			Control.B6 => [Y, RIGHT_STICK_DIGITAL_LEFT],
+			Control.B7 => [B, RIGHT_STICK_DIGITAL_DOWN],
+			Control.B8 => [A, RIGHT_STICK_DIGITAL_UP],
+			Control.B9 => [X, RIGHT_STICK_DIGITAL_RIGHT]
 		]);
 		#end
 	}
