@@ -1,3 +1,4 @@
+#if !PSYCH_ENGINE_IS_CRINGE
 package;
 
 #if desktop
@@ -399,3 +400,4 @@ class ModMetadata
 		}
 	}
 }
+#end
