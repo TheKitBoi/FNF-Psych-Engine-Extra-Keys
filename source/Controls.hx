@@ -366,23 +366,54 @@ enum Control
 	BACK;
 	PAUSE;
 	
-	A1;
-	A2;
-	A3;
-	A4;
-	A5;
-	A6;
-	A7;
+	ONE1;
 
-	B1;
-	B2;
-	B3;
-	B4;
-	B5;
-	B6;
-	B7;
-	B8;
-	B9;
+	TWO1;
+	TWO2;
+
+	THREE1;
+	THREE2;
+	THREE3;
+
+	FIVE1;
+	FIVE2;
+	FIVE3;
+	FIVE4;
+	FIVE5;
+
+	SIX1;
+	SIX2;
+	SIX3;
+	SIX4;
+	SIX5;
+	SIX6;
+
+	SEVEN1;
+	SEVEN2;
+	SEVEN3;
+	SEVEN4;
+	SEVEN5;
+	SEVEN6;
+	SEVEN7;
+
+	EIGHT1;
+	EIGHT2;
+	EIGHT3;
+	EIGHT4;
+	EIGHT5;
+	EIGHT6;
+	EIGHT7;
+	EIGHT8;
+
+	NINE1;
+	NINE2;
+	NINE3;
+	NINE4;
+	NINE5;
+	NINE6;
+	NINE7;
+	NINE8;
+	NINE9;
 }
 
 enum KeyboardScheme
@@ -795,6 +826,59 @@ class Controls extends FlxActionSet
 	public var SEVEN7(get, never):Bool; inline function get_SEVEN7() {return _sev7.check();}
 	public var SEVEN7_P(get, never):Bool; inline function get_SEVEN7_P() {return _sev7P.check();}
 	public var SEVEN7_R(get, never):Bool; inline function get_SEVEN7_R() {return _sev7R.check();}
+
+	public var EIGHT1(get, never):Bool; inline function get_EIGHT1() {return _eig1.check();}
+	public var EIGHT1_P(get, never):Bool; inline function get_EIGHT1_P() {return _eig1P.check();}
+	public var EIGHT1_R(get, never):Bool; inline function get_EIGHT1_R() {return _eig1R.check();}
+	public var EIGHT2(get, never):Bool; inline function get_EIGHT2() {return _eig2.check();}
+	public var EIGHT2_P(get, never):Bool; inline function get_EIGHT2_P() {return _eig2P.check();}
+	public var EIGHT2_R(get, never):Bool; inline function get_EIGHT2_R() {return _eig2R.check();}
+	public var EIGHT3(get, never):Bool; inline function get_EIGHT3() {return _eig3.check();}
+	public var EIGHT3_P(get, never):Bool; inline function get_EIGHT3_P() {return _eig3P.check();}
+	public var EIGHT3_R(get, never):Bool; inline function get_EIGHT3_R() {return _eig3R.check();}
+	public var EIGHT4(get, never):Bool; inline function get_EIGHT4() {return _eig4.check();}
+	public var EIGHT4_P(get, never):Bool; inline function get_EIGHT4_P() {return _eig4P.check();}
+	public var EIGHT4_R(get, never):Bool; inline function get_EIGHT4_R() {return _eig4R.check();}
+	public var EIGHT5(get, never):Bool; inline function get_EIGHT5() {return _eig5.check();}
+	public var EIGHT5_P(get, never):Bool; inline function get_EIGHT5_P() {return _eig5P.check();}
+	public var EIGHT5_R(get, never):Bool; inline function get_EIGHT5_R() {return _eig5R.check();}
+	public var EIGHT6(get, never):Bool; inline function get_EIGHT6() {return _eig6.check();}
+	public var EIGHT6_P(get, never):Bool; inline function get_EIGHT6_P() {return _eig6P.check();}
+	public var EIGHT6_R(get, never):Bool; inline function get_EIGHT6_R() {return _eig6R.check();}
+	public var EIGHT7(get, never):Bool; inline function get_EIGHT7() {return _eig7.check();}
+	public var EIGHT7_P(get, never):Bool; inline function get_EIGHT7_P() {return _eig7P.check();}
+	public var EIGHT7_R(get, never):Bool; inline function get_EIGHT7_R() {return _eig7R.check();}
+	public var EIGHT8(get, never):Bool; inline function get_EIGHT8() {return _eig8.check();}
+	public var EIGHT8_P(get, never):Bool; inline function get_EIGHT8_P() {return _eig8P.check();}
+	public var EIGHT8_R(get, never):Bool; inline function get_EIGHT8_R() {return _eig8R.check();}
+
+	public var NINE1(get, never):Bool; inline function get_NINE1() {return _nin1.check();}
+	public var NINE1_P(get, never):Bool; inline function get_NINE1_P() {return _nin1P.check();}
+	public var NINE1_R(get, never):Bool; inline function get_NINE1_R() {return _nin1R.check();}
+	public var NINE2(get, never):Bool; inline function get_NINE2() {return _nin2.check();}
+	public var NINE2_P(get, never):Bool; inline function get_NINE2_P() {return _nin2P.check();}
+	public var NINE2_R(get, never):Bool; inline function get_NINE2_R() {return _nin2R.check();}
+	public var NINE3(get, never):Bool; inline function get_NINE3() {return _nin3.check();}
+	public var NINE3_P(get, never):Bool; inline function get_NINE3_P() {return _nin3P.check();}
+	public var NINE3_R(get, never):Bool; inline function get_NINE3_R() {return _nin3R.check();}
+	public var NINE4(get, never):Bool; inline function get_NINE4() {return _nin4.check();}
+	public var NINE4_P(get, never):Bool; inline function get_NINE4_P() {return _nin4P.check();}
+	public var NINE4_R(get, never):Bool; inline function get_NINE4_R() {return _nin4R.check();}
+	public var NINE5(get, never):Bool; inline function get_NINE5() {return _nin5.check();}
+	public var NINE5_P(get, never):Bool; inline function get_NINE5_P() {return _nin5P.check();}
+	public var NINE5_R(get, never):Bool; inline function get_NINE5_R() {return _nin5R.check();}
+	public var NINE6(get, never):Bool; inline function get_NINE6() {return _nin6.check();}
+	public var NINE6_P(get, never):Bool; inline function get_NINE6_P() {return _nin6P.check();}
+	public var NINE6_R(get, never):Bool; inline function get_NINE6_R() {return _nin6R.check();}
+	public var NINE7(get, never):Bool; inline function get_NINE7() {return _nin7.check();}
+	public var NINE7_P(get, never):Bool; inline function get_NINE7_P() {return _nin7P.check();}
+	public var NINE7_R(get, never):Bool; inline function get_NINE7_R() {return _nin7R.check();}
+	public var NINE8(get, never):Bool; inline function get_NINE8() {return _nin8.check();}
+	public var NINE8_P(get, never):Bool; inline function get_NINE8_P() {return _nin8P.check();}
+	public var NINE8_R(get, never):Bool; inline function get_NINE8_R() {return _nin8R.check();}
+	public var NINE9(get, never):Bool; inline function get_NINE9() {return _nin9.check();}
+	public var NINE9_P(get, never):Bool; inline function get_NINE9_P() {return _nin9P.check();}
+	public var NINE9_R(get, never):Bool; inline function get_NINE9_R() {return _nin9R.check();}
 	
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
@@ -829,6 +913,55 @@ class Controls extends FlxActionSet
 		add(_back);
 		add(_pause);
 		add(_reset);
+
+		add(_one1); add(_one1P); add(_one1R);
+
+		add(_two1); add(_two1P); add(_two1R);
+		add(_two2); add(_two2P); add(_two2R);
+
+		add(_three1); add(_three1P); add(_three1R);
+		add(_three2); add(_three2P); add(_three2R);
+		add(_three3); add(_three3P); add(_three3R);
+
+		add(_five1); add(_five1P); add(_five1R); 
+		add(_five2); add(_five2P); add(_five2R);
+		add(_five3); add(_five3P); add(_five3R);
+		add(_five4); add(_five4P); add(_five4R);
+		add(_five5); add(_five5P); add(_five5R);
+
+		add(_six1); add(_six1P); add(_six1R);
+		add(_six2); add(_six2P); add(_six2R);
+		add(_six3); add(_six3P); add(_six3R);
+		add(_six4); add(_six4P); add(_six4R);
+		add(_six5); add(_six5P); add(_six5R);
+		add(_six6); add(_six6P); add(_six6R);
+
+		add(_sev1); add(_sev1P); add(_sev1R);
+		add(_sev2); add(_sev2P); add(_sev2R);
+		add(_sev3); add(_sev3P); add(_sev3R);
+		add(_sev4); add(_sev4P); add(_sev4R);
+		add(_sev5); add(_sev5P); add(_sev5R);
+		add(_sev6); add(_sev6P); add(_sev6R);
+		add(_sev7); add(_sev7P); add(_sev7R);
+
+		add(_eig1); add(_eig1P); add(_eig1R);
+		add(_eig2); add(_eig2P); add(_eig2R);
+		add(_eig3); add(_eig3P); add(_eig3R);
+		add(_eig4); add(_eig4P); add(_eig4R);
+		add(_eig5); add(_eig5P); add(_eig5R);
+		add(_eig6); add(_eig6P); add(_eig6R);
+		add(_eig7); add(_eig7P); add(_eig7R);
+		add(_eig8); add(_eig8P); add(_eig8R);
+
+		add(_nin1); add(_nin1P); add(_nin1R);
+		add(_nin2); add(_nin2P); add(_nin2R);
+		add(_nin3); add(_nin3P); add(_nin3R);
+		add(_nin4); add(_nin4P); add(_nin4R);
+		add(_nin5); add(_nin5P); add(_nin5R);
+		add(_nin6); add(_nin6P); add(_nin6R);
+		add(_nin7); add(_nin7P); add(_nin7R);
+		add(_nin8); add(_nin8P); add(_nin8R);
+		add(_nin9); add(_nin9P); add(_nin9R);
 		
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -868,62 +1001,56 @@ class Controls extends FlxActionSet
 		add(_back);
 		add(_pause);
 		add(_reset);
+
+		add(_one1); add(_one1P); add(_one1R);
+
+		add(_two1); add(_two1P); add(_two1R);
+		add(_two2); add(_two2P); add(_two2R);
+
+		add(_three1); add(_three1P); add(_three1R);
+		add(_three2); add(_three2P); add(_three2R);
+		add(_three3); add(_three3P); add(_three3R);
+
+		add(_five1); add(_five1P); add(_five1R); 
+		add(_five2); add(_five2P); add(_five2R);
+		add(_five3); add(_five3P); add(_five3R);
+		add(_five4); add(_five4P); add(_five4R);
+		add(_five5); add(_five5P); add(_five5R);
+
+		add(_six1); add(_six1P); add(_six1R);
+		add(_six2); add(_six2P); add(_six2R);
+		add(_six3); add(_six3P); add(_six3R);
+		add(_six4); add(_six4P); add(_six4R);
+		add(_six5); add(_six5P); add(_six5R);
+		add(_six6); add(_six6P); add(_six6R);
+
+		add(_sev1); add(_sev1P); add(_sev1R);
+		add(_sev2); add(_sev2P); add(_sev2R);
+		add(_sev3); add(_sev3P); add(_sev3R);
+		add(_sev4); add(_sev4P); add(_sev4R);
+		add(_sev5); add(_sev5P); add(_sev5R);
+		add(_sev6); add(_sev6P); add(_sev6R);
+		add(_sev7); add(_sev7P); add(_sev7R);
+
+		add(_eig1); add(_eig1P); add(_eig1R);
+		add(_eig2); add(_eig2P); add(_eig2R);
+		add(_eig3); add(_eig3P); add(_eig3R);
+		add(_eig4); add(_eig4P); add(_eig4R);
+		add(_eig5); add(_eig5P); add(_eig5R);
+		add(_eig6); add(_eig6P); add(_eig6R);
+		add(_eig7); add(_eig7P); add(_eig7R);
+		add(_eig8); add(_eig8P); add(_eig8R);
+
+		add(_nin1); add(_nin1P); add(_nin1R);
+		add(_nin2); add(_nin2P); add(_nin2R);
+		add(_nin3); add(_nin3P); add(_nin3R);
+		add(_nin4); add(_nin4P); add(_nin4R);
+		add(_nin5); add(_nin5P); add(_nin5R);
+		add(_nin6); add(_nin6P); add(_nin6R);
+		add(_nin7); add(_nin7P); add(_nin7R);
+		add(_nin8); add(_nin8P); add(_nin8R);
+		add(_nin9); add(_nin9P); add(_nin9R);
 		
-		add(_a1);
-		add(_a2);
-		add(_a3);
-		add(_a4);
-		add(_a5);
-		add(_a6);
-		add(_a7);
-
-		add(_a1P);
-		add(_a2P);
-		add(_a3P);
-		add(_a4P);
-		add(_a5P);
-		add(_a6P);
-		add(_a7P);
-
-		add(_a1R);
-		add(_a2R);
-		add(_a3R);
-		add(_a4R);
-		add(_a5R);
-		add(_a6R);
-		add(_a7R);
-
-
-		add(_b1);
-		add(_b2);
-		add(_b3);
-		add(_b4);
-		add(_b5);
-		add(_b6);
-		add(_b7);
-		add(_b8);
-		add(_b9);
-
-		add(_b1P);
-		add(_b2P);
-		add(_b3P);
-		add(_b4P);
-		add(_b5P);
-		add(_b6P);
-		add(_b7P);
-		add(_b8P);
-		add(_b9P);
-
-		add(_b1R);
-		add(_b2R);
-		add(_b3R);
-		add(_b4R);
-		add(_b5R);
-		add(_b6R);
-		add(_b7R);
-		add(_b8R);
-		add(_b9R);
-
 		for (action in digitalActions)
 			byName[action.name] = action;
 			
@@ -981,26 +1108,54 @@ class Controls extends FlxActionSet
 			case PAUSE: _pause;
 			case RESET: _reset;
 		
-			/*
-			case A1: _a1;
-			case A2: _a2;
-			case A3: _a3;
-			case A4: _a4;
-			case A5: _a5;
-			case A6: _a6;
-			case A7: _a7;
+			case ONE1: _one1;
 
+			case TWO1: _two1;
+			case TWO2: _two2;
 
-			case B1: _b1;
-			case B2: _b2;
-			case B3: _b3;
-			case B4: _b4;
-			case B5: _b5;
-			case B6: _b6;
-			case B7: _b7;
-			case B8: _b8;
-			case B9: _b9;
-			*/
+			case THREE1: _three1;
+			case THREE2: _three2;
+			case THREE3: _three3;
+			
+			case FIVE1: _five1;
+			case FIVE2: _five2;
+			case FIVE3: _five3;
+			case FIVE4: _five4; 
+			case FIVE5: _five5;
+
+			case SIX1: _six1;
+			case SIX2: _six2;
+			case SIX3: _six3;
+			case SIX4: _six4;
+			case SIX5: _six5;
+			case SIX6: _six6;
+
+			case SEVEN1: _sev1;
+			case SEVEN2: _sev2;
+			case SEVEN3: _sev3;
+			case SEVEN4: _sev4;
+			case SEVEN5: _sev5;
+			case SEVEN6: _sev6;
+			case SEVEN7: _sev7;
+
+			case EIGHT1: _eig1;
+			case EIGHT2: _eig2;
+			case EIGHT3: _eig3;
+			case EIGHT4: _eig4;
+			case EIGHT5: _eig5;
+			case EIGHT6: _eig6;
+			case EIGHT7: _eig7;
+			case EIGHT8: _eig8;
+
+			case NINE1: _nin1;
+			case NINE2: _nin2;
+			case NINE3: _nin3;
+			case NINE4: _nin4;
+			case NINE5: _nin5;
+			case NINE6: _nin6;
+			case NINE7: _nin7;
+			case NINE8: _nin8;
+			case NINE9: _nin9;
 		}
 	}
 
@@ -1061,74 +1216,99 @@ class Controls extends FlxActionSet
 			case RESET:
 				func(_reset, JUST_PRESSED);
 
-				/*
-			case A1:
-				func(_a1, PRESSED);
-				func(_a1P, JUST_PRESSED);
-				func(_a1R, JUST_RELEASED);
-			case A2:
-				func(_a2, PRESSED);
-				func(_a2P, JUST_PRESSED);
-				func(_a2R, JUST_RELEASED);
-			case A3:
-				func(_a3, PRESSED);
-				func(_a3P, JUST_PRESSED);
-				func(_a3R, JUST_RELEASED);
-			case A4:
-				func(_a4, PRESSED);
-				func(_a4P, JUST_PRESSED);
-				func(_a4R, JUST_RELEASED);
-			case A5:
-				func(_a5, PRESSED);
-				func(_a5P, JUST_PRESSED);
-				func(_a5R, JUST_RELEASED);
-			case A6:
-				func(_a6, PRESSED);
-				func(_a6P, JUST_PRESSED);
-				func(_a6R, JUST_RELEASED);
-			case A7:
-				func(_a7, PRESSED);
-				func(_a7P, JUST_PRESSED);
-				func(_a7R, JUST_RELEASED);
+			case ONE1:
+				func(_one1, PRESSED);
+				func(_one1P, JUST_PRESSED);
+				func(_one1R, JUST_RELEASED);
+			case TWO1:
+				func(_two1, PRESSED);
+				func(_two1P, JUST_PRESSED);
+				func(_two1R, JUST_RELEASED);
+			case TWO2:
+				func(_two2, PRESSED);
+				func(_two2P, JUST_PRESSED);
+				func(_two2R, JUST_RELEASED);
+			case THREE1:
+				func(_three1, PRESSED); func(_three1P, JUST_PRESSED); func(_three1R, JUST_RELEASED);
+			case THREE2: 
+				func(_three2, PRESSED); func(_three2P, JUST_PRESSED); func(_three2R, JUST_RELEASED);
+			case THREE3:
+				func(_three3, PRESSED); func(_three3P, JUST_PRESSED); func(_three3R, JUST_RELEASED);
 
+			case FIVE1:
+				func(_five1, PRESSED); func(_five1P, JUST_PRESSED); func(_five1R, JUST_RELEASED);
+			case FIVE2:
+				func(_five2, PRESSED); func(_five2P, JUST_PRESSED); func(_five2R, JUST_RELEASED);
+			case FIVE3:
+				func(_five3, PRESSED); func(_five3P, JUST_PRESSED); func(_five3R, JUST_RELEASED);
+			case FIVE4:
+				func(_five4, PRESSED); func(_five3P, JUST_PRESSED); func(_five4R, JUST_RELEASED);
+			case FIVE5:
+				func(_five5, PRESSED); func(_five3P, JUST_PRESSED); func(_five5R, JUST_RELEASED);
 
-			case B1:
-				func(_b1, PRESSED);
-				func(_b1P, JUST_PRESSED);
-				func(_b1R, JUST_RELEASED);
-			case B2:
-				func(_b2, PRESSED);
-				func(_b2P, JUST_PRESSED);
-				func(_b2R, JUST_RELEASED);
-			case B3:
-				func(_b3, PRESSED);
-				func(_b3P, JUST_PRESSED);
-				func(_b3R, JUST_RELEASED);
-			case B4:
-				func(_b4, PRESSED);
-				func(_b4P, JUST_PRESSED);
-				func(_b4R, JUST_RELEASED);
-			case B5:
-				func(_b5, PRESSED);
-				func(_b5P, JUST_PRESSED);
-				func(_b5R, JUST_RELEASED);
-			case B6:
-				func(_b6, PRESSED);
-				func(_b6P, JUST_PRESSED);
-				func(_b6R, JUST_RELEASED);
-			case B7:
-				func(_b7, PRESSED);
-				func(_b7P, JUST_PRESSED);
-				func(_b7R, JUST_RELEASED);
-			case B8:
-				func(_b8, PRESSED);
-				func(_b8P, JUST_PRESSED);
-				func(_b8R, JUST_RELEASED);
-			case B9:
-				func(_b9, PRESSED);
-				func(_b9P, JUST_PRESSED);
-				func(_b9R, JUST_RELEASED);
-				*/
+			case SIX1:
+				func(_six1, PRESSED); func(_six1P, JUST_PRESSED); func(_six1R, JUST_RELEASED);
+			case SIX2:
+				func(_six2, PRESSED); func(_six2P, JUST_PRESSED); func(_six2R, JUST_RELEASED);
+			case SIX3:
+				func(_six3, PRESSED); func(_six3P, JUST_PRESSED); func(_six3R, JUST_RELEASED);
+			case SIX4:
+				func(_six4, PRESSED); func(_six4P, JUST_PRESSED); func(_six4R, JUST_RELEASED);
+			case SIX5:
+				func(_six5, PRESSED); func(_six5P, JUST_PRESSED); func(_six5R, JUST_RELEASED);	
+			case SIX6:
+				func(_six6, PRESSED); func(_six6P, JUST_PRESSED); func(_six6R, JUST_RELEASED);
+
+			case SEVEN1:
+				func(_sev1, PRESSED); func(_sev1P, JUST_PRESSED); func(_sev1R, JUST_RELEASED);
+			case SEVEN2:
+				func(_sev2, PRESSED); func(_sev2P, JUST_PRESSED); func(_sev2R, JUST_RELEASED);
+			case SEVEN3:
+				func(_sev3, PRESSED); func(_sev3P, JUST_PRESSED); func(_sev3R, JUST_RELEASED);
+			case SEVEN4:
+				func(_sev4, PRESSED); func(_sev4P, JUST_PRESSED); func(_sev4R, JUST_RELEASED);
+			case SEVEN5:
+				func(_sev5, PRESSED); func(_sev5P, JUST_PRESSED); func(_sev5R, JUST_RELEASED);	
+			case SEVEN6:
+				func(_sev6, PRESSED); func(_sev6P, JUST_PRESSED); func(_sev6R, JUST_RELEASED);
+			case SEVEN7:
+				func(_sev7, PRESSED); func(_sev7P, JUST_PRESSED); func(_sev7R, JUST_RELEASED);
+
+			case EIGHT1:
+				func(_eig1, PRESSED); func(_eig1P, JUST_PRESSED); func(_eig1R, JUST_RELEASED);
+			case EIGHT2:
+				func(_eig2, PRESSED); func(_eig2P, JUST_PRESSED); func(_eig2R, JUST_RELEASED);
+			case EIGHT3:
+				func(_eig3, PRESSED); func(_eig3P, JUST_PRESSED); func(_eig3R, JUST_RELEASED);
+			case EIGHT4:
+				func(_eig4, PRESSED); func(_eig4P, JUST_PRESSED); func(_eig4R, JUST_RELEASED);
+			case EIGHT5:
+				func(_eig5, PRESSED); func(_eig5P, JUST_PRESSED); func(_eig5R, JUST_RELEASED);	
+			case EIGHT6:
+				func(_eig6, PRESSED); func(_eig6P, JUST_PRESSED); func(_eig6R, JUST_RELEASED);
+			case EIGHT7:
+				func(_eig7, PRESSED); func(_eig7P, JUST_PRESSED); func(_eig7R, JUST_RELEASED);
+			case EIGHT8:
+				func(_eig8, PRESSED); func(_eig8P, JUST_PRESSED); func(_eig8R, JUST_RELEASED);
+
+			case NINE1:
+				func(_nin1, PRESSED); func(_nin1P, JUST_PRESSED); func(_nin1R, JUST_RELEASED);
+			case NINE2:
+				func(_nin2, PRESSED); func(_nin2P, JUST_PRESSED); func(_nin2R, JUST_RELEASED);
+			case NINE3:
+				func(_nin3, PRESSED); func(_nin3P, JUST_PRESSED); func(_nin3R, JUST_RELEASED);
+			case NINE4:
+				func(_nin4, PRESSED); func(_nin4P, JUST_PRESSED); func(_nin4R, JUST_RELEASED);
+			case NINE5:
+				func(_nin5, PRESSED); func(_nin5P, JUST_PRESSED); func(_nin5R, JUST_RELEASED);	
+			case NINE6:
+				func(_nin6, PRESSED); func(_nin6P, JUST_PRESSED); func(_nin6R, JUST_RELEASED);
+			case NINE7:
+				func(_nin7, PRESSED); func(_nin7P, JUST_PRESSED); func(_nin7R, JUST_RELEASED);
+			case NINE8:
+				func(_nin8, PRESSED); func(_nin8P, JUST_PRESSED); func(_nin8R, JUST_RELEASED);
+			case NINE9:
+				func(_nin9, PRESSED); func(_nin9P, JUST_PRESSED); func(_nin9R, JUST_RELEASED);
 		}
 	}
 
@@ -1298,23 +1478,54 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.PAUSE, keysMap.get('pause'));
 				inline bindKeys(Control.RESET, keysMap.get('reset'));
 
-				inline bindKeys(Control.A1, keysMap.get('note_a1'));
-				inline bindKeys(Control.A2, keysMap.get('note_a2'));
-				inline bindKeys(Control.A3, keysMap.get('note_a3'));
-				inline bindKeys(Control.A4, keysMap.get('note_a4'));
-				inline bindKeys(Control.A5, keysMap.get('note_a5'));
-				inline bindKeys(Control.A6, keysMap.get('note_a6'));
-				inline bindKeys(Control.A7, keysMap.get('note_a7'));
+				inline bindKeys(Control.ONE1, keysMap.get('note_one1'));
+
+				inline bindKeys(Control.TWO1, keysMap.get('note_two1'));
+				inline bindKeys(Control.TWO2, keysMap.get('note_two2'));
 				
-				inline bindKeys(Control.B1, keysMap.get('note_b1'));
-				inline bindKeys(Control.B2, keysMap.get('note_b2'));
-				inline bindKeys(Control.B3, keysMap.get('note_b3'));
-				inline bindKeys(Control.B4, keysMap.get('note_b4'));
-				inline bindKeys(Control.B5, keysMap.get('note_b5'));
-				inline bindKeys(Control.B6, keysMap.get('note_b6'));
-				inline bindKeys(Control.B7, keysMap.get('note_b7'));
-				inline bindKeys(Control.B8, keysMap.get('note_b8'));
-				inline bindKeys(Control.B9, keysMap.get('note_b9'));
+				inline bindKeys(Control.THREE1, keysMap.get('note_three1'));
+				inline bindKeys(Control.THREE2, keysMap.get('note_three2'));
+				inline bindKeys(Control.THREE3, keysMap.get('note_three3'));
+
+				inline bindKeys(Control.FIVE1, keysMap.get('note_five1'));
+				inline bindKeys(Control.FIVE2, keysMap.get('note_five2'));
+				inline bindKeys(Control.FIVE3, keysMap.get('note_five3'));
+				inline bindKeys(Control.FIVE4, keysMap.get('note_five4'));
+				inline bindKeys(Control.FIVE5, keysMap.get('note_five5'));
+
+				inline bindKeys(Control.SIX1, keysMap.get('note_six1'));
+				inline bindKeys(Control.SIX2, keysMap.get('note_six2'));
+				inline bindKeys(Control.SIX3, keysMap.get('note_six3'));
+				inline bindKeys(Control.SIX4, keysMap.get('note_six4'));
+				inline bindKeys(Control.SIX5, keysMap.get('note_six5'));
+				inline bindKeys(Control.SIX6, keysMap.get('note_six6'));
+
+				inline bindKeys(Control.SEVEN1, keysMap.get('note_seven1'));
+				inline bindKeys(Control.SEVEN2, keysMap.get('note_seven2'));
+				inline bindKeys(Control.SEVEN3, keysMap.get('note_seven3'));
+				inline bindKeys(Control.SEVEN4, keysMap.get('note_seven4'));
+				inline bindKeys(Control.SEVEN5, keysMap.get('note_seven5'));
+				inline bindKeys(Control.SEVEN6, keysMap.get('note_seven6'));
+				inline bindKeys(Control.SEVEN7, keysMap.get('note_seven7'));
+
+				inline bindKeys(Control.EIGHT1, keysMap.get('note_eight1'));
+				inline bindKeys(Control.EIGHT2, keysMap.get('note_eight2'));
+				inline bindKeys(Control.EIGHT3, keysMap.get('note_eight3'));
+				inline bindKeys(Control.EIGHT4, keysMap.get('note_eight4'));
+				inline bindKeys(Control.EIGHT5, keysMap.get('note_eight5'));
+				inline bindKeys(Control.EIGHT6, keysMap.get('note_eight6'));
+				inline bindKeys(Control.EIGHT7, keysMap.get('note_eight7'));
+				inline bindKeys(Control.EIGHT8, keysMap.get('note_eight8'));
+
+				inline bindKeys(Control.NINE1, keysMap.get('note_nine1'));
+				inline bindKeys(Control.NINE2, keysMap.get('note_nine2'));
+				inline bindKeys(Control.NINE3, keysMap.get('note_nine3'));
+				inline bindKeys(Control.NINE4, keysMap.get('note_nine4'));
+				inline bindKeys(Control.NINE5, keysMap.get('note_nine5'));
+				inline bindKeys(Control.NINE6, keysMap.get('note_nine6'));
+				inline bindKeys(Control.NINE7, keysMap.get('note_nine7'));
+				inline bindKeys(Control.NINE8, keysMap.get('note_nine8'));
+				inline bindKeys(Control.NINE9, keysMap.get('note_nine9'));
 			case Duo(true):
 				inline bindKeys(Control.UI_UP, [W]);
 				inline bindKeys(Control.UI_DOWN, [S]);
@@ -1329,24 +1540,54 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.PAUSE, [ONE]);
 				inline bindKeys(Control.RESET, [R]);
 
-				/*
-				inline bindKeys(Control.A1, [S]);
-				inline bindKeys(Control.A2, [D]);
-				inline bindKeys(Control.A3, [F]);
-				inline bindKeys(Control.A4, [SPACE]);
-				inline bindKeys(Control.A5, [J]);
-				inline bindKeys(Control.A6, [K]);
-				inline bindKeys(Control.A7, [L]);
+				inline bindKeys(Control.ONE1, [SPACE]);
+
+				inline bindKeys(Control.TWO1, [D]);
+				inline bindKeys(Control.TWO2, [K]);
 				
-				inline bindKeys(Control.B1, [A]);
-				inline bindKeys(Control.B2, [S]);
-				inline bindKeys(Control.B3, [D]);
-				inline bindKeys(Control.B4, [F]);
-				inline bindKeys(Control.B5, [SPACE]);
-				inline bindKeys(Control.B6, [H]);
-				inline bindKeys(Control.B7, [J]);
-				inline bindKeys(Control.B8, [K]);
-				inline bindKeys(Control.B9, [L]);*/
+				inline bindKeys(Control.THREE1, [D]);
+				inline bindKeys(Control.THREE2, [SPACE]);
+				inline bindKeys(Control.THREE3, [K]);
+
+				inline bindKeys(Control.FIVE1, [D]);
+				inline bindKeys(Control.FIVE2, [F]);
+				inline bindKeys(Control.FIVE3, [SPACE]);
+				inline bindKeys(Control.FIVE4, [J]);
+				inline bindKeys(Control.FIVE5, [K]);
+
+				inline bindKeys(Control.SIX1, [S]);
+				inline bindKeys(Control.SIX2, [D]);
+				inline bindKeys(Control.SIX3, [F]);
+				inline bindKeys(Control.SIX4, [J]);
+				inline bindKeys(Control.SIX5, [K]);
+				inline bindKeys(Control.SIX6, [L]);
+
+				inline bindKeys(Control.SEVEN1, [S]);
+				inline bindKeys(Control.SEVEN2, [D]);
+				inline bindKeys(Control.SEVEN3, [F]);
+				inline bindKeys(Control.SEVEN4, [SPACE]);
+				inline bindKeys(Control.SEVEN5, [J]);
+				inline bindKeys(Control.SEVEN6, [K]);
+				inline bindKeys(Control.SEVEN7, [L]);
+
+				inline bindKeys(Control.EIGHT1, [A]);
+				inline bindKeys(Control.EIGHT2, [S]);
+				inline bindKeys(Control.EIGHT3, [D]);
+				inline bindKeys(Control.EIGHT4, [F]);
+				inline bindKeys(Control.EIGHT5, [H]);
+				inline bindKeys(Control.EIGHT6, [J]);
+				inline bindKeys(Control.EIGHT7, [K]);
+				inline bindKeys(Control.EIGHT8, [L]);
+
+				inline bindKeys(Control.NINE1, [A]);
+				inline bindKeys(Control.NINE2, [S]);
+				inline bindKeys(Control.NINE3, [D]);
+				inline bindKeys(Control.NINE4, [F]);
+				inline bindKeys(Control.NINE5, [SPACE]);
+				inline bindKeys(Control.NINE6, [H]);
+				inline bindKeys(Control.NINE7, [J]);
+				inline bindKeys(Control.NINE8, [K]);
+				inline bindKeys(Control.NINE9, [L]);
 			case Duo(false):
 				inline bindKeys(Control.UI_UP, [FlxKey.UP]);
 				inline bindKeys(Control.UI_DOWN, [FlxKey.DOWN]);
@@ -1361,24 +1602,54 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.PAUSE, [ENTER]);
 				inline bindKeys(Control.RESET, [BACKSPACE]);
 				
-				/*
-				inline bindKeys(Control.A1, [S]);
-				inline bindKeys(Control.A2, [D]);
-				inline bindKeys(Control.A3, [F]);
-				inline bindKeys(Control.A4, [SPACE]);
-				inline bindKeys(Control.A5, [J]);
-				inline bindKeys(Control.A6, [K]);
-				inline bindKeys(Control.A7, [L]);
+				inline bindKeys(Control.ONE1, [SPACE]);
+
+				inline bindKeys(Control.TWO1, [D]);
+				inline bindKeys(Control.TWO2, [K]);
 				
-				inline bindKeys(Control.B1, [A]);
-				inline bindKeys(Control.B2, [S]);
-				inline bindKeys(Control.B3, [D]);
-				inline bindKeys(Control.B4, [F]);
-				inline bindKeys(Control.B5, [SPACE]);
-				inline bindKeys(Control.B6, [H]);
-				inline bindKeys(Control.B7, [J]);
-				inline bindKeys(Control.B8, [K]);
-				inline bindKeys(Control.B9, [L]);*/
+				inline bindKeys(Control.THREE1, [D]);
+				inline bindKeys(Control.THREE2, [SPACE]);
+				inline bindKeys(Control.THREE3, [K]);
+
+				inline bindKeys(Control.FIVE1, [D]);
+				inline bindKeys(Control.FIVE2, [F]);
+				inline bindKeys(Control.FIVE3, [SPACE]);
+				inline bindKeys(Control.FIVE4, [J]);
+				inline bindKeys(Control.FIVE5, [K]);
+
+				inline bindKeys(Control.SIX1, [S]);
+				inline bindKeys(Control.SIX2, [D]);
+				inline bindKeys(Control.SIX3, [F]);
+				inline bindKeys(Control.SIX4, [J]);
+				inline bindKeys(Control.SIX5, [K]);
+				inline bindKeys(Control.SIX6, [L]);
+
+				inline bindKeys(Control.SEVEN1, [S]);
+				inline bindKeys(Control.SEVEN2, [D]);
+				inline bindKeys(Control.SEVEN3, [F]);
+				inline bindKeys(Control.SEVEN4, [SPACE]);
+				inline bindKeys(Control.SEVEN5, [J]);
+				inline bindKeys(Control.SEVEN6, [K]);
+				inline bindKeys(Control.SEVEN7, [L]);
+
+				inline bindKeys(Control.EIGHT1, [A]);
+				inline bindKeys(Control.EIGHT2, [S]);
+				inline bindKeys(Control.EIGHT3, [D]);
+				inline bindKeys(Control.EIGHT4, [F]);
+				inline bindKeys(Control.EIGHT5, [H]);
+				inline bindKeys(Control.EIGHT6, [J]);
+				inline bindKeys(Control.EIGHT7, [K]);
+				inline bindKeys(Control.EIGHT8, [L]);
+
+				inline bindKeys(Control.NINE1, [A]);
+				inline bindKeys(Control.NINE2, [S]);
+				inline bindKeys(Control.NINE3, [D]);
+				inline bindKeys(Control.NINE4, [F]);
+				inline bindKeys(Control.NINE5, [SPACE]);
+				inline bindKeys(Control.NINE6, [H]);
+				inline bindKeys(Control.NINE7, [J]);
+				inline bindKeys(Control.NINE8, [K]);
+				inline bindKeys(Control.NINE9, [L]);
 			case None: // nothing
 			case Custom: // nothing
 		}
@@ -1399,25 +1670,54 @@ class Controls extends FlxActionSet
 				bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
 				bindKeys(Control.RESET, [R]);
 
-				/*
-				bindKeys(Control.A1, [S]);
-				bindKeys(Control.A2, [D]);
-				bindKeys(Control.A3, [F]);
-				bindKeys(Control.A4, [SPACE]);
-				bindKeys(Control.A5, [J]);
-				bindKeys(Control.A6, [K]);
-				bindKeys(Control.A7, [L]);
+				bindKeys(Control.ONE1, [SPACE]);
+
+				bindKeys(Control.TWO1, [D]);
+				bindKeys(Control.TWO2, [K]);
 				
-				bindKeys(Control.B1, [A]);
-				bindKeys(Control.B2, [S]);
-				bindKeys(Control.B3, [D]);
-				bindKeys(Control.B4, [F]);
-				bindKeys(Control.B5, [SPACE]);
-				bindKeys(Control.B6, [H]);
-				bindKeys(Control.B7, [J]);
-				bindKeys(Control.B8, [K]);
-				bindKeys(Control.B9, [L]);
-				*/
+				bindKeys(Control.THREE1, [D]);
+				bindKeys(Control.THREE2, [SPACE]);
+				bindKeys(Control.THREE3, [K]);
+
+				bindKeys(Control.FIVE1, [D]);
+				bindKeys(Control.FIVE2, [F]);
+				bindKeys(Control.FIVE3, [SPACE]);
+				bindKeys(Control.FIVE4, [J]);
+				bindKeys(Control.FIVE5, [K]);
+
+				bindKeys(Control.SIX1, [S]);
+				bindKeys(Control.SIX2, [D]);
+				bindKeys(Control.SIX3, [F]);
+				bindKeys(Control.SIX4, [J]);
+				bindKeys(Control.SIX5, [K]);
+				bindKeys(Control.SIX6, [L]);
+
+				bindKeys(Control.SEVEN1, [S]);
+				bindKeys(Control.SEVEN2, [D]);
+				bindKeys(Control.SEVEN3, [F]);
+				bindKeys(Control.SEVEN4, [SPACE]);
+				bindKeys(Control.SEVEN5, [J]);
+				bindKeys(Control.SEVEN6, [K]);
+				bindKeys(Control.SEVEN7, [L]);
+
+				bindKeys(Control.EIGHT1, [A]);
+				bindKeys(Control.EIGHT2, [S]);
+				bindKeys(Control.EIGHT3, [D]);
+				bindKeys(Control.EIGHT4, [F]);
+				bindKeys(Control.EIGHT5, [H]);
+				bindKeys(Control.EIGHT6, [J]);
+				bindKeys(Control.EIGHT7, [K]);
+				bindKeys(Control.EIGHT8, [L]);
+
+				bindKeys(Control.NINE1, [A]);
+				bindKeys(Control.NINE2, [S]);
+				bindKeys(Control.NINE3, [D]);
+				bindKeys(Control.NINE4, [F]);
+				bindKeys(Control.NINE5, [SPACE]);
+				bindKeys(Control.NINE6, [H]);
+				bindKeys(Control.NINE7, [J]);
+				bindKeys(Control.NINE8, [K]);
+				bindKeys(Control.NINE9, [L]);
 			case Duo(true):
 				bindKeys(Control.UI_UP, [W]);
 				bindKeys(Control.UI_DOWN, [S]);
@@ -1432,23 +1732,54 @@ class Controls extends FlxActionSet
 				bindKeys(Control.PAUSE, [ONE]);
 				bindKeys(Control.RESET, [R]);
 
-				bindKeys(Control.A1, [S]);
-				bindKeys(Control.A2, [D]);
-				bindKeys(Control.A3, [F]);
-				bindKeys(Control.A4, [SPACE]);
-				bindKeys(Control.A5, [J]);
-				bindKeys(Control.A6, [K]);
-				bindKeys(Control.A7, [L]);
+				bindKeys(Control.ONE1, [SPACE]);
+
+				bindKeys(Control.TWO1, [D]);
+				bindKeys(Control.TWO2, [K]);
 				
-				bindKeys(Control.B1, [A]);
-				bindKeys(Control.B2, [S]);
-				bindKeys(Control.B3, [D]);
-				bindKeys(Control.B4, [F]);
-				bindKeys(Control.B5, [SPACE]);
-				bindKeys(Control.B6, [H]);
-				bindKeys(Control.B7, [J]);
-				bindKeys(Control.B8, [K]);
-				bindKeys(Control.B9, [L]);
+				bindKeys(Control.THREE1, [D]);
+				bindKeys(Control.THREE2, [SPACE]);
+				bindKeys(Control.THREE3, [K]);
+
+				bindKeys(Control.FIVE1, [D]);
+				bindKeys(Control.FIVE2, [F]);
+				bindKeys(Control.FIVE3, [SPACE]);
+				bindKeys(Control.FIVE4, [J]);
+				bindKeys(Control.FIVE5, [K]);
+
+				bindKeys(Control.SIX1, [S]);
+				bindKeys(Control.SIX2, [D]);
+				bindKeys(Control.SIX3, [F]);
+				bindKeys(Control.SIX4, [J]);
+				bindKeys(Control.SIX5, [K]);
+				bindKeys(Control.SIX6, [L]);
+
+				bindKeys(Control.SEVEN1, [S]);
+				bindKeys(Control.SEVEN2, [D]);
+				bindKeys(Control.SEVEN3, [F]);
+				bindKeys(Control.SEVEN4, [SPACE]);
+				bindKeys(Control.SEVEN5, [J]);
+				bindKeys(Control.SEVEN6, [K]);
+				bindKeys(Control.SEVEN7, [L]);
+
+				bindKeys(Control.EIGHT1, [A]);
+				bindKeys(Control.EIGHT2, [S]);
+				bindKeys(Control.EIGHT3, [D]);
+				bindKeys(Control.EIGHT4, [F]);
+				bindKeys(Control.EIGHT5, [H]);
+				bindKeys(Control.EIGHT6, [J]);
+				bindKeys(Control.EIGHT7, [K]);
+				bindKeys(Control.EIGHT8, [L]);
+
+				bindKeys(Control.NINE1, [A]);
+				bindKeys(Control.NINE2, [S]);
+				bindKeys(Control.NINE3, [D]);
+				bindKeys(Control.NINE4, [F]);
+				bindKeys(Control.NINE5, [SPACE]);
+				bindKeys(Control.NINE6, [H]);
+				bindKeys(Control.NINE7, [J]);
+				bindKeys(Control.NINE8, [K]);
+				bindKeys(Control.NINE9, [L]);
 			case Duo(false):
 				bindKeys(Control.UI_UP, [FlxKey.UP]);
 				bindKeys(Control.UI_DOWN, [FlxKey.DOWN]);
@@ -1463,23 +1794,54 @@ class Controls extends FlxActionSet
 				bindKeys(Control.PAUSE, [ENTER]);
 				bindKeys(Control.RESET, [BACKSPACE]);
 
-				bindKeys(Control.A1, [S]);
-				bindKeys(Control.A2, [D]);
-				bindKeys(Control.A3, [F]);
-				bindKeys(Control.A4, [SPACE]);
-				bindKeys(Control.A5, [J]);
-				bindKeys(Control.A6, [K]);
-				bindKeys(Control.A7, [L]);
+				bindKeys(Control.ONE1, [SPACE]);
+
+				bindKeys(Control.TWO1, [D]);
+				bindKeys(Control.TWO2, [K]);
 				
-				bindKeys(Control.B1, [A]);
-				bindKeys(Control.B2, [S]);
-				bindKeys(Control.B3, [D]);
-				bindKeys(Control.B4, [F]);
-				bindKeys(Control.B5, [SPACE]);
-				bindKeys(Control.B6, [H]);
-				bindKeys(Control.B7, [J]);
-				bindKeys(Control.B8, [K]);
-				bindKeys(Control.B9, [L]);
+				bindKeys(Control.THREE1, [D]);
+				bindKeys(Control.THREE2, [SPACE]);
+				bindKeys(Control.THREE3, [K]);
+
+				bindKeys(Control.FIVE1, [D]);
+				bindKeys(Control.FIVE2, [F]);
+				bindKeys(Control.FIVE3, [SPACE]);
+				bindKeys(Control.FIVE4, [J]);
+				bindKeys(Control.FIVE5, [K]);
+
+				bindKeys(Control.SIX1, [S]);
+				bindKeys(Control.SIX2, [D]);
+				bindKeys(Control.SIX3, [F]);
+				bindKeys(Control.SIX4, [J]);
+				bindKeys(Control.SIX5, [K]);
+				bindKeys(Control.SIX6, [L]);
+
+				bindKeys(Control.SEVEN1, [S]);
+				bindKeys(Control.SEVEN2, [D]);
+				bindKeys(Control.SEVEN3, [F]);
+				bindKeys(Control.SEVEN4, [SPACE]);
+				bindKeys(Control.SEVEN5, [J]);
+				bindKeys(Control.SEVEN6, [K]);
+				bindKeys(Control.SEVEN7, [L]);
+
+				bindKeys(Control.EIGHT1, [A]);
+				bindKeys(Control.EIGHT2, [S]);
+				bindKeys(Control.EIGHT3, [D]);
+				bindKeys(Control.EIGHT4, [F]);
+				bindKeys(Control.EIGHT5, [H]);
+				bindKeys(Control.EIGHT6, [J]);
+				bindKeys(Control.EIGHT7, [K]);
+				bindKeys(Control.EIGHT8, [L]);
+
+				bindKeys(Control.NINE1, [A]);
+				bindKeys(Control.NINE2, [S]);
+				bindKeys(Control.NINE3, [D]);
+				bindKeys(Control.NINE4, [F]);
+				bindKeys(Control.NINE5, [SPACE]);
+				bindKeys(Control.NINE6, [H]);
+				bindKeys(Control.NINE7, [J]);
+				bindKeys(Control.NINE8, [K]);
+				bindKeys(Control.NINE9, [L]);
 			case None: // nothing
 			case Custom: // nothing
 		}
@@ -1559,6 +1921,7 @@ class Controls extends FlxActionSet
 			Control.PAUSE => [START],
 			Control.RESET => [8],
 
+			/*
 			Control.A1 => [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT],
 			Control.A2 => [DPAD_UP, LEFT_STICK_DIGITAL_UP],
 			Control.A3 => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
@@ -1575,7 +1938,7 @@ class Controls extends FlxActionSet
 			Control.B6 => [X, RIGHT_STICK_DIGITAL_LEFT],
 			Control.B7 => [A, RIGHT_STICK_DIGITAL_DOWN],
 			Control.B8 => [B, RIGHT_STICK_DIGITAL_UP],
-			Control.B9 => [Y, RIGHT_STICK_DIGITAL_RIGHT]
+			Control.B9 => [Y, RIGHT_STICK_DIGITAL_RIGHT]*/
 		]);
 		#else
 		addGamepadLiteral(id, [

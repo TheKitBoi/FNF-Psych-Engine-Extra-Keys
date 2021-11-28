@@ -53,7 +53,7 @@ class NotesSubState extends MusicBeatSubstate
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		
-		blackBG = new FlxSprite(posX - 25).makeGraphic(870, 200, FlxColor.BLACK);
+		blackBG = new FlxSprite(posX - 25).makeGraphic(870, 100, FlxColor.BLACK);
 		blackBG.alpha = 0.4;
 		add(blackBG);
 
@@ -63,9 +63,9 @@ class NotesSubState extends MusicBeatSubstate
 		add(grpNumbers);
 
 		for (i in 0...ClientPrefs.arrowHSV.length) {
-			var yPos:Float = (165 * i) + 35;
+			var yPos:Float = (80 * i) - 40;
 			for (j in 0...3) {
-				var optionText:Alphabet = new Alphabet(0, yPos + 60, Std.string(ClientPrefs.arrowHSV[i][j]), true);
+				var optionText:Alphabet = new Alphabet(0, yPos + 60, Std.string(ClientPrefs.arrowHSV[i][j]), true, false, 0.05, 0.8);
 				optionText.x = posX + (225 * j) + 250;
 				grpNumbers.add(optionText);
 			}
@@ -209,12 +209,12 @@ class NotesSubState extends MusicBeatSubstate
 		for (i in 0...grpNotes.length) {
 			var item = grpNotes.members[i];
 			item.alpha = 0.6;
-			item.scale.set(0.75, 0.75);
+			item.scale.set(0.5, 0.5);
 			if (curSelected == i) {
 				item.alpha = 1;
-				item.scale.set(1, 1);
-				hsbText.y = item.y - 70;
-				blackBG.y = item.y - 20;
+				item.scale.set(0.6, 0.6);
+				hsbText.y = item.y - 40;
+				blackBG.y = item.y + 28;
 			}
 		}
 		FlxG.sound.play(Paths.sound('scrollMenu'));

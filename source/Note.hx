@@ -345,3 +345,52 @@ class Note extends FlxSprite
 		}
 	}
 }
+
+class NoteData
+{
+    public static var keyMaps:Map<Int, Array<Dynamic>> = [
+        0       =>      [[4], [4]],
+        1       =>      [[0, 3], [0, 3]],
+        2       =>      [[0, 4, 3], [0, 4, 3]],
+        3       =>      [[0, 1, 2, 3], [0, 1, 2, 3]],
+        4       =>      [[0, 1, 4, 2, 3], [0, 1, 4, 2, 3]],
+        5       =>      [[0, 2, 3, 5, 1, 8], [0, 2, 3, 0, 1, 3]],
+        6       =>      [[0, 2, 3, 4, 5, 1, 8], [0, 2, 3, 4, 0, 1, 3]],
+        7       =>      [[0, 1, 2, 3, 5, 6, 7, 8], [0, 1, 2, 3, 0, 1, 2, 3]],
+        8       =>      [[0, 1, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 0, 1, 2, 3]]
+    ];
+
+    public static function getKeyMap(mania:Int, key:Int, type:Int):Int
+    {
+        return keyMaps.get(mania)[type][key];
+    }
+
+    public static function getAmmo(mania:Int)
+    {
+        var ammo:Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+		return ammo[mania];
+    }
+
+	public static function getAnimation(data:Int, type:Int) {
+		var gfxDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT', 'SPACE'];
+		var charDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT', 'UP'];
+
+		var str:String = '';
+		switch(type)
+		{
+			case 0:
+				str = gfxDir[data];
+			case 1:
+				str = charDir[data];
+		}
+
+		return str;
+	}
+
+	public static function getLetter(data:Int) {
+		var gfxLetter:Array<String> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+
+		return gfxLetter[data];
+	}
+}
