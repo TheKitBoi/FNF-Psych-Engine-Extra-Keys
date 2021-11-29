@@ -273,6 +273,29 @@ class Note extends FlxSprite
 		}
 	}
 
+	public function applyManiaChange()
+	{
+		loadNoteAnims();
+		if (!isSustainNote)
+		{
+			var animToPlay:String = '';
+			animToPlay = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0));
+			animation.play(animToPlay);
+		}
+
+		if (isSustainNote && prevNote != null)
+		{
+			animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' tail');
+			if (prevNote.isSustainNote)
+			{
+				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' hold');
+				prevNote.updateHitbox();
+			}
+		}
+
+		updateHitbox();
+	}
+
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);

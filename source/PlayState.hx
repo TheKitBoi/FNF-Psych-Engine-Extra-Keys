@@ -1741,6 +1741,10 @@ class PlayState extends MusicBeatState
 		opponentStrums.clear();
 		strumLineNotes.clear();
 
+		notes.forEachAlive(function(among:Note) {
+			among.applyManiaChange();
+		});
+
 		generateStaticArrows(0);
 		generateStaticArrows(1);
 	}
@@ -2222,11 +2226,15 @@ class PlayState extends MusicBeatState
 				var strumAngle:Float = 0;
 				var strumAlpha:Float = 0;
 				if(daNote.mustPress) {
+					if (playerStrums.members[daNote.noteData] == null) daNote.noteData = SONG.mania;	//crash prevention ig?
+
 					strumX = playerStrums.members[daNote.noteData].x;
 					strumY = playerStrums.members[daNote.noteData].y;
 					strumAngle = playerStrums.members[daNote.noteData].angle;
 					strumAlpha = playerStrums.members[daNote.noteData].alpha;
 				} else {
+					if (opponentStrums.members[daNote.noteData] == null) daNote.noteData = SONG.mania;
+
 					strumX = opponentStrums.members[daNote.noteData].x;
 					strumY = opponentStrums.members[daNote.noteData].y;
 					strumAngle = opponentStrums.members[daNote.noteData].angle;
@@ -2709,7 +2717,7 @@ class PlayState extends MusicBeatState
 				var newMania:Int = 0;
 
 				newMania = Std.parseInt(value1);
-				if(Math.isNaN(newMania) || newMania > 8 || newMania < 0)
+				if(!Math.isNaN(newMania) && newMania <= 8 && newMania >= 0)
 					newMania = 0;
 
 				changeMania(newMania);
