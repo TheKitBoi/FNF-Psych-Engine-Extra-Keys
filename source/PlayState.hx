@@ -1690,7 +1690,7 @@ class PlayState extends MusicBeatState
 
 	private function generateStaticArrows(player:Int):Void
 	{
-		for (i in 0...4)
+		for (i in 0...Note.NoteData.getAmmo(SONG.mania))
 		{
 			// FlxG.log.add(i);
 			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
@@ -3248,6 +3248,38 @@ class PlayState extends MusicBeatState
 
 	private function keyShit():Void
 	{
+		var one = [controls.ONE1];
+		var oneP = [controls.ONE1_P];
+		var oneR = [controls.ONE1_R];
+
+		var two = [controls.TWO1, controls.TWO2];
+		var twoP = [controls.TWO1_P, controls.TWO2_P];
+		var twoR = [controls.TWO1_R, controls.TWO2_R];
+
+		var thr = [controls.THREE1, controls.THREE2, controls.THREE3];
+		var thrP = [controls.THREE1_P, controls.THREE2_P, controls.THREE3_P];
+		var thrR = [controls.THREE1_R, controls.THREE2_R, controls.THREE3_R];
+
+		var fiv = [controls.FIVE1, controls.FIVE2, controls.FIVE3, controls.FIVE4, controls.FIVE5];
+		var fivP = [controls.FIVE1_P, controls.FIVE2_P, controls.FIVE3_P, controls.FIVE4_P, controls.FIVE5_P];
+		var fivR = [controls.FIVE1_R, controls.FIVE2_R, controls.FIVE3_R, controls.FIVE4_R, controls.FIVE5_R];
+
+		var six = [controls.SIX1, controls.SIX2, controls.SIX3, controls.SIX4, controls.SIX5, controls.SIX6];
+		var sixP = [controls.SIX1_P, controls.SIX2_P, controls.SIX3_P, controls.SIX4_P, controls.SIX5_P, controls.SIX6_P];
+		var sixR = [controls.SIX1_R, controls.SIX2_R, controls.SIX3_R, controls.SIX4_R, controls.SIX5_R, controls.SIX6_R];
+
+		var sev = [controls.SEVEN1, controls.SEVEN2, controls.SEVEN3, controls.SEVEN4, controls.SEVEN5, controls.SEVEN6, controls.SEVEN7];
+		var sevP = [controls.SEVEN1_P, controls.SEVEN2_P, controls.SEVEN3_P, controls.SEVEN4_P, controls.SEVEN5_P, controls.SEVEN6_P, controls.SEVEN7_P];
+		var sevR = [controls.SEVEN1_R, controls.SEVEN2_R, controls.SEVEN3_R, controls.SEVEN4_R, controls.SEVEN5_R, controls.SEVEN6_R, controls.SEVEN7_R];
+
+		var eig = [controls.EIGHT1, controls.EIGHT2, controls.EIGHT3, controls.EIGHT4, controls.EIGHT5, controls.EIGHT6, controls.EIGHT7, controls.EIGHT8];
+		var eigP = [controls.EIGHT1_P, controls.EIGHT2_P, controls.EIGHT3_P, controls.EIGHT4_P, controls.EIGHT5_P, controls.EIGHT6_P, controls.EIGHT7_P, controls.EIGHT8_P];
+		var eigR = [controls.EIGHT1_R, controls.EIGHT2_R, controls.EIGHT3_R, controls.EIGHT4_R, controls.EIGHT5_R, controls.EIGHT6_R, controls.EIGHT7_R, controls.EIGHT8_R];
+
+		var nin = [controls.NINE1, controls.NINE2, controls.NINE3, controls.NINE4, controls.NINE5, controls.NINE6, controls.NINE7, controls.NINE8, controls.NINE9];
+		var ninP = [controls.NINE1_P, controls.NINE2_P, controls.NINE3_P, controls.NINE4_P, controls.NINE5_P, controls.NINE6_P, controls.NINE7_P, controls.NINE8_P, controls.NINE9_P];
+		var ninR = [controls.NINE1_R, controls.NINE2_R, controls.NINE3_R, controls.NINE4_R, controls.NINE5_R, controls.NINE6_R, controls.NINE7_R, controls.NINE8_R, controls.NINE9_R];
+
 		// HOLDING
 		var up = controls.NOTE_UP;
 		var right = controls.NOTE_RIGHT;
@@ -3264,9 +3296,27 @@ class PlayState extends MusicBeatState
 		var downR = controls.NOTE_DOWN_R;
 		var leftR = controls.NOTE_LEFT_R;
 
-		var controlArray:Array<Bool> = [leftP, downP, upP, rightP];
-		var controlReleaseArray:Array<Bool> = [leftR, downR, upR, rightR];
-		var controlHoldArray:Array<Bool> = [left, down, up, right];
+		var controlArray:Array<Bool> = [];
+		var controlReleaseArray:Array<Bool> = [];
+		var controlHoldArray:Array<Bool> = [];
+
+		switch (SONG.mania) {
+			case 0:
+				controlArray = oneP;
+				controlReleaseArray = oneR;
+				controlHoldArray = one;
+			case 1:
+				controlArray = twoP;
+				controlReleaseArray = twoR;
+				controlHoldArray = two;
+			case 2:
+				controlArray = thrP;
+				controlReleaseArray = thrR;
+				controlHoldArray = thr;
+			default:
+				controlArray = [leftP, downP, upP, rightP];
+				controlReleaseArray = [leftR, downR, upR, rightR];
+		}
 
 		// FlxG.watch.addQuick('asdfa', upP);
 		if (!boyfriend.stunned && generatedMusic)

@@ -68,6 +68,11 @@ class Note extends FlxSprite
 	public var hitCausesMiss:Bool = false;
 	public var distance:Float = 2000;//plan on doing scroll directions soon -bb
 
+	public var mania:Int = 1;
+
+	var ogW:Float;
+	var ogH:Float;
+
 	private function set_texture(value:String):String {
 		if(texture != value) {
 			reloadNote('', value);
@@ -78,9 +83,9 @@ class Note extends FlxSprite
 
 	private function set_noteType(value:String):String {
 		noteSplashTexture = PlayState.SONG.splashSkin;
-		colorSwap.hue = ClientPrefs.arrowHSV[noteData % 4][0] / 360;
-		colorSwap.saturation = ClientPrefs.arrowHSV[noteData % 4][1] / 100;
-		colorSwap.brightness = ClientPrefs.arrowHSV[noteData % 4][2] / 100;
+		colorSwap.hue = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][0] / 360;
+		colorSwap.saturation = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][1] / 100;
+		colorSwap.brightness = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][2] / 100;
 
 		if(noteData > -1 && noteType != value) {
 			switch(value) {
@@ -135,18 +140,8 @@ class Note extends FlxSprite
 			x += swagWidth * (noteData % 4);
 			if(!isSustainNote) { //Doing this 'if' check to fix the warnings on Senpai songs
 				var animToPlay:String = '';
-				switch (noteData % 4)
-				{
-					case 0:
-						animToPlay = 'purple';
-					case 1:
-						animToPlay = 'blue';
-					case 2:
-						animToPlay = 'green';
-					case 3:
-						animToPlay = 'red';
-				}
-				animation.play(animToPlay + 'Scroll');
+				animToPlay = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0));
+				animation.play(animToPlay);
 			}
 		}
 
@@ -161,17 +156,7 @@ class Note extends FlxSprite
 			offsetX += width / 2;
 			copyAngle = false;
 
-			switch (noteData)
-			{
-				case 0:
-					animation.play('purpleholdend');
-				case 1:
-					animation.play('blueholdend');
-				case 2:
-					animation.play('greenholdend');
-				case 3:
-					animation.play('redholdend');
-			}
+			animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' tail');
 
 			updateHitbox();
 
@@ -182,17 +167,7 @@ class Note extends FlxSprite
 
 			if (prevNote.isSustainNote)
 			{
-				switch (prevNote.noteData)
-				{
-					case 0:
-						prevNote.animation.play('purplehold');
-					case 1:
-						prevNote.animation.play('bluehold');
-					case 2:
-						prevNote.animation.play('greenhold');
-					case 3:
-						prevNote.animation.play('redhold');
-				}
+				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' hold');
 
 				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.songSpeed;
 				if(PlayState.isPixelStage) {
@@ -223,6 +198,9 @@ class Note extends FlxSprite
 			if(skin == null || skin.length < 1) {
 				skin = 'NOTE_assets';
 			}
+			if(PlayState.isPixelStage) {
+				skin = 'PIXEL_'+skin;
+			}
 		}
 
 		var animName:String = null;
@@ -235,26 +213,9 @@ class Note extends FlxSprite
 
 		var lastScaleY:Float = scale.y;
 		var blahblah:String = arraySkin.join('/');
-		if(PlayState.isPixelStage) {
-			if(isSustainNote) {
-				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
-				width = width / 4;
-				height = height / 2;
-				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
-			} else {
-				loadGraphic(Paths.image('pixelUI/' + blahblah));
-				width = width / 4;
-				height = height / 5;
-				loadGraphic(Paths.image('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
-			}
-			setGraphicSize(Std.int(width * PlayState.daPixelZoom));
-			loadPixelNoteAnims();
-			antialiasing = false;
-		} else {
-			frames = Paths.getSparrowAtlas(blahblah);
-			loadNoteAnims();
-			antialiasing = ClientPrefs.globalAntialiasing;
-		}
+		frames = Paths.getSparrowAtlas(blahblah);
+		loadNoteAnims();
+		antialiasing = ClientPrefs.globalAntialiasing;
 		if(isSustainNote) {
 			scale.y = lastScaleY;
 			if(ClientPrefs.keSustains) {
@@ -273,26 +234,24 @@ class Note extends FlxSprite
 	}
 
 	function loadNoteAnims() {
-		animation.addByPrefix('greenScroll', 'green0');
-		animation.addByPrefix('redScroll', 'red0');
-		animation.addByPrefix('blueScroll', 'blue0');
-		animation.addByPrefix('purpleScroll', 'purple0');
-
-		if (isSustainNote)
-		{
-			animation.addByPrefix('purpleholdend', 'pruple end hold');
-			animation.addByPrefix('greenholdend', 'green hold end');
-			animation.addByPrefix('redholdend', 'red hold end');
-			animation.addByPrefix('blueholdend', 'blue hold end');
-
-			animation.addByPrefix('purplehold', 'purple hold piece');
-			animation.addByPrefix('greenhold', 'green hold piece');
-			animation.addByPrefix('redhold', 'red hold piece');
-			animation.addByPrefix('bluehold', 'blue hold piece');
-		}
-
-		setGraphicSize(Std.int(width * 0.7));
-		updateHitbox();
+		for (i in 0...9)
+			{
+				animation.addByPrefix(Note.NoteData.getLetter(i), Note.NoteData.getLetter(i) + '0');
+	
+				if (isSustainNote)
+				{
+					animation.addByPrefix(Note.NoteData.getLetter(i) + ' hold', Note.NoteData.getLetter(i) + ' hold');
+					animation.addByPrefix(Note.NoteData.getLetter(i) + ' tail', Note.NoteData.getLetter(i) + ' tail');
+				}
+			}
+	
+			ogW = width;
+			ogH = height;
+			if (!isSustainNote)
+				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.SONG.mania)));
+			else
+				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.SONG.mania)), Std.int(ogH * Note.NoteData.getScale(3)));
+			updateHitbox();
 	}
 
 	function loadPixelNoteAnims() {
@@ -392,5 +351,23 @@ class NoteData
 		var gfxLetter:Array<String> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 		return gfxLetter[data];
+	}
+
+	public static function getScale(mania:Int) {
+		var scales:Array<Float> = [0.85, 0.8, 0.75, 0.7, 0.66, 0.6, 0.55, 0.50, 0.46];
+
+		return scales[mania];
+	}
+
+	public static function getSwagWidth(mania:Int) {
+		var swidths:Array<Float> = [141, 124, 116, 108, 102, 93, 85, 77, 71];
+
+		return swidths[mania];
+	}
+
+	public static function getRestPosition(mania:Int) {
+		var posRest:Array<Int> = [0, 0, 0, 0, 25, 35, 50, 60, 70];
+
+		return posRest[mania];
 	}
 }

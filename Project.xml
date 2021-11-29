@@ -53,7 +53,7 @@
 	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
 
 	<!--BRUH -->
-	<define name="PSYCH_ENGINE_IS_CRINGE" />
+	<define name="BBPANZU_IS_CRING" />
 
 	<!-- <define name="PRELOAD_ALL" /> -->
 	<define name="PRELOAD_ALL" unless="web" />

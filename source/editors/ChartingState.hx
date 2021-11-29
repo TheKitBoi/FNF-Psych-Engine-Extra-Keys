@@ -218,6 +218,8 @@ class ChartingState extends MusicBeatState
 		Paths.destroyLoadedImages();
 		#end
 
+		PlayState.SONG.mania = _song.mania;
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Chart Editor", StringTools.replace(_song.song, '-', ' '));
@@ -1205,7 +1207,8 @@ class ChartingState extends MusicBeatState
 
 		strumLine.y = getYfromStrum((Conductor.songPosition - sectionStartTime()) / zoomList[curZoom] % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps));
 
-		for (i in 0...8){
+		for (i in 0...strumLineNotes.members.length){
+		PlayState.SONG.mania = _song.mania;
 		strumLineNotes.members[i].y = strumLine.y;
 		}
 
@@ -1745,6 +1748,19 @@ class ChartingState extends MusicBeatState
 		add(strumLine);
 
 		updateGrid();
+
+		if (strumLineNotes != null)
+		{
+			strumLineNotes.clear();
+			for (i in 0...(Note.NoteData.getAmmo(_song.mania) * 2)){
+				var note:StrumNote = new StrumNote(GRID_SIZE * (i+1), strumLine.y, i % Note.NoteData.getAmmo(_song.mania), 0);
+				note.setGraphicSize(GRID_SIZE, GRID_SIZE);
+				note.updateHitbox();
+				note.playAnim('static', true);
+				strumLineNotes.add(note);
+				note.scrollFactor.set(1, 1);
+			}
+		}
 	}
 
 	var waveformPrinted:Bool = true;

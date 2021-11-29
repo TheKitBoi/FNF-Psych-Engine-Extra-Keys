@@ -1,4 +1,4 @@
-#if !PSYCH_ENGINE_IS_CRINGE
+#if !BBPANZU_IS_CRING
 package;
 
 #if desktop
