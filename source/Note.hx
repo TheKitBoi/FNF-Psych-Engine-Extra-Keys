@@ -162,23 +162,23 @@ class Note extends FlxSprite
 
 			offsetX -= width / 2;
 
-			if (PlayState.isPixelStage)
-				offsetX += 30;
+			//if (PlayState.isPixelStage)
+				//offsetX += 30;
 
 			if (prevNote.isSustainNote)
 			{
 				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' hold');
 
 				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.songSpeed;
-				if(PlayState.isPixelStage) {
-					prevNote.scale.y *= 1.19;
-				}
+				//if(PlayState.isPixelStage) {
+					//prevNote.scale.y *= 1.19;
+				//}
 				prevNote.updateHitbox();
 				// prevNote.setGraphicSize();
 			}
 
 			if(PlayState.isPixelStage) {
-				scale.y *= PlayState.daPixelZoom;
+				//scale.y *= PlayState.daPixelZoom;
 				updateHitbox();
 			}
 		} else if(!isSustainNote) {
