@@ -1242,9 +1242,9 @@ class Controls extends FlxActionSet
 			case FIVE3:
 				func(_five3, PRESSED); func(_five3P, JUST_PRESSED); func(_five3R, JUST_RELEASED);
 			case FIVE4:
-				func(_five4, PRESSED); func(_five3P, JUST_PRESSED); func(_five4R, JUST_RELEASED);
+				func(_five4, PRESSED); func(_five4P, JUST_PRESSED); func(_five4R, JUST_RELEASED);
 			case FIVE5:
-				func(_five5, PRESSED); func(_five3P, JUST_PRESSED); func(_five5R, JUST_RELEASED);
+				func(_five5, PRESSED); func(_five5P, JUST_PRESSED); func(_five5R, JUST_RELEASED);
 
 			case SIX1:
 				func(_six1, PRESSED); func(_six1P, JUST_PRESSED); func(_six1R, JUST_RELEASED);
