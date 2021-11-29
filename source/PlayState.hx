@@ -881,6 +881,15 @@ class PlayState extends MusicBeatState
 		FlxG.fixedTimestep = false;
 		moveCameraSection(0);
 
+		if (ClientPrefs.sonicExeShaders)
+			{
+				var funny:shaders.SonicExe;
+				funny = new shaders.SonicExe();
+
+				camGame.setFilters([new ShaderFilter(funny)]);
+				camHUD.setFilters([new ShaderFilter(funny)]);
+			}
+
 		healthBarBG = new AttachedSprite('healthBar');
 		healthBarBG.y = FlxG.height * 0.89;
 		healthBarBG.screenCenter(X);
@@ -1550,11 +1559,11 @@ class PlayState extends MusicBeatState
 			{
 				if(songNotes[1] > -1) { //Real notes
 					var daStrumTime:Float = songNotes[0];
-					var daNoteData:Int = Std.int(songNotes[1] % 4);
+					var daNoteData:Int = Std.int(songNotes[1] % Note.NoteData.getAmmo(SONG.mania));
 
 					var gottaHitNote:Bool = section.mustHitSection;
 
-					if (songNotes[1] > 3)
+					if (songNotes[1] > (Note.NoteData.getAmmo(SONG.mania) - 1))
 					{
 						gottaHitNote = !section.mustHitSection;
 					}
@@ -1720,6 +1729,20 @@ class PlayState extends MusicBeatState
 			strumLineNotes.add(babyArrow);
 			babyArrow.postAddedToGroup();
 		}
+	}
+
+	function changeMania(newValue:Int)
+	{
+		SONG.mania = newValue;
+
+		for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {alpha: 0}, 1);
+		for (i in 0...opponentStrums.members.length) FlxTween.tween(opponentStrums.members[i], {alpha: 0}, 1);
+		playerStrums.clear();
+		opponentStrums.clear();
+		strumLineNotes.clear();
+
+		generateStaticArrows(0);
+		generateStaticArrows(1);
 	}
 
 	override function openSubState(SubState:FlxSubState)
@@ -2682,7 +2705,14 @@ class PlayState extends MusicBeatState
 						targetsArray[i].shake(intensity, duration);
 					}
 				}
+			case 'Change Mania':
+				var newMania:Int = 0;
 
+				newMania = Std.parseInt(value1);
+				if(Math.isNaN(newMania) || newMania > 8 || newMania < 0)
+					newMania = 0;
+
+				changeMania(newMania);
 
 			case 'Change Character':
 				var charType:Int = 0;
@@ -3301,21 +3331,42 @@ class PlayState extends MusicBeatState
 		var controlHoldArray:Array<Bool> = [];
 
 		switch (SONG.mania) {
-			case 0:
+			case 0:		//1 key
 				controlArray = oneP;
 				controlReleaseArray = oneR;
 				controlHoldArray = one;
-			case 1:
+			case 1:		//2 keys
 				controlArray = twoP;
 				controlReleaseArray = twoR;
 				controlHoldArray = two;
-			case 2:
+			case 2:		//3 keys
 				controlArray = thrP;
 				controlReleaseArray = thrR;
 				controlHoldArray = thr;
-			default:
+			case 3: 	//4 keys
 				controlArray = [leftP, downP, upP, rightP];
 				controlReleaseArray = [leftR, downR, upR, rightR];
+				controlHoldArray = [left, down, up, right];
+			case 4:		//5 keys
+				controlArray = fivP;
+				controlReleaseArray = fivR;
+				controlHoldArray = fiv;
+			case 5:		//6 keys
+				controlArray = sixP;
+				controlReleaseArray = sixR;
+				controlHoldArray = six;
+			case 6:		//7 keys
+				controlArray = sevP;
+				controlReleaseArray = sevR;
+				controlHoldArray = sev;
+			case 7:		//8 keys
+				controlArray = eigP;
+				controlReleaseArray = eigR;
+				controlHoldArray = eig;
+			case 8:		//9 keys
+				controlArray = ninP;
+				controlReleaseArray = ninR;
+				controlHoldArray = nin;
 		}
 
 		// FlxG.watch.addQuick('asdfa', upP);
@@ -3444,7 +3495,7 @@ class PlayState extends MusicBeatState
 			var daAlt = '';
 			if(daNote.noteType == 'Alt Animation') daAlt = '-alt';
 
-			var animToPlay:String = singAnimations[Std.int(Math.abs(daNote.noteData))] + 'miss' + daAlt;
+			var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, daNote.noteData, 1), 1) + 'miss' + daAlt;
 			char.playAnim(animToPlay, true);
 		}
 
@@ -3482,7 +3533,7 @@ class PlayState extends MusicBeatState
 			});*/
 
 			if(boyfriend.hasMissAnimations) {
-				boyfriend.playAnim(singAnimations[Std.int(Math.abs(direction))] + 'miss', true);
+				boyfriend.playAnim('sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, direction, 1), 1) + 'miss', true);
 			}
 			vocals.volume = 0;
 		}
@@ -3509,7 +3560,7 @@ class PlayState extends MusicBeatState
 			}
 
 			var char:Character = dad;
-			var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))] + altAnim;
+			var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, note.noteData, 1), 1) + altAnim;
 			if(SONG.notes[curSection].gfSection || note.noteType == 'GF Sing') {
 				char = gf;
 			}
@@ -3525,7 +3576,7 @@ class PlayState extends MusicBeatState
 		if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
 			time += 0.15;
 		}
-		StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % 4, time);
+		StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % Note.NoteData.getAmmo(SONG.mania), time);
 		note.hitByOpponent = true;
 
 		callOnLuas('opponentNoteHit', [notes.members.indexOf(note), Math.abs(note.noteData), note.noteType, note.isSustainNote]);
@@ -3580,7 +3631,7 @@ class PlayState extends MusicBeatState
 				var daAlt = '';
 				if(note.noteType == 'Alt Animation') daAlt = '-alt';
 	
-				var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))];
+				var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, note.noteData, 1), 1);
 
 				if(note.noteType == 'GF Sing') {
 					gf.playAnim(animToPlay + daAlt, true);
@@ -3610,7 +3661,7 @@ class PlayState extends MusicBeatState
 				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
 					time += 0.15;
 				}
-				StrumPlayAnim(false, Std.int(Math.abs(note.noteData)) % 4, time);
+				StrumPlayAnim(false, Std.int(Math.abs(note.noteData)) % Note.NoteData.getAmmo(SONG.mania), time);
 			} else {
 				playerStrums.forEach(function(spr:StrumNote)
 				{
@@ -3650,9 +3701,9 @@ class PlayState extends MusicBeatState
 		var skin:String = 'noteSplashes';
 		if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 		
-		var hue:Float = ClientPrefs.arrowHSV[data % 4][0] / 360;
-		var sat:Float = ClientPrefs.arrowHSV[data % 4][1] / 100;
-		var brt:Float = ClientPrefs.arrowHSV[data % 4][2] / 100;
+		var hue:Float = ClientPrefs.arrowHSV[data % Note.NoteData.getAmmo(PlayState.SONG.mania)][0] / 360;
+		var sat:Float = ClientPrefs.arrowHSV[data % Note.NoteData.getAmmo(PlayState.SONG.mania)][1] / 100;
+		var brt:Float = ClientPrefs.arrowHSV[data % Note.NoteData.getAmmo(PlayState.SONG.mania)][2] / 100;
 		if(note != null) {
 			skin = note.noteSplashTexture;
 			hue = note.noteSplashHue;

@@ -69,8 +69,16 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			'imagesPersist',
 			'bool',
 			false);
+
 		option.onChange = onChangePersistentData; //Persistent Cached Data changes FlxGraphic.defaultPersist
 		addOption(option);
+
+		#if desktop
+		var option:Option = new Option('Shaders', 'If checked, there will be sonic exe shaders lol', 'sonicExeShaders', 'bool', false);
+		option.onChange = onChangeShaders;
+		addOption(option);
+		#end
+
 		super();
 	}
 
@@ -99,6 +107,11 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			FlxG.drawFramerate = ClientPrefs.framerate;
 			FlxG.updateFramerate = ClientPrefs.framerate;
 		}
+	}
+
+	function onChangeShaders()
+	{
+		trace('among us shaders are ' + ClientPrefs.sonicExeShaders);
 	}
 
 	function onChangePersistentData()

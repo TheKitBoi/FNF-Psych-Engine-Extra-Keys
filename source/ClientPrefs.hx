@@ -25,29 +25,30 @@ class ClientPrefs {
 	public static var ghostTapping:Bool = true;
 	public static var hideTime:Bool = false;
 	public static var keSustains:Bool = false; //i was bored, okay?
+	public static var sonicExeShaders:Bool = false;
 
 	//Every key has two binds, add your key bind down here and then add your control on options/ControlsSubState.hx and Controls.hx
 	public static var keyBinds:Map<String, Array<FlxKey>> = [
 		//Key Bind, Name for ControlsSubState
 		'note_one1'		=> [SPACE, NONE],
 
-		'note_two1'		=> [A, LEFT],
-		'note_two2'		=> [D, RIGHT],
+		'note_two1'		=> [D, NONE],
+		'note_two2'		=> [K, NONE],
 
-		'note_three1'	=> [A, LEFT],
+		'note_three1'	=> [D, NONE],
 		'note_three2'	=> [SPACE, NONE],
-		'note_three3'	=> [D, RIGHT],
+		'note_three3'	=> [K, NONE],
 
 		'note_left'		=> [A, LEFT],
 		'note_down'		=> [S, DOWN],
 		'note_up'		=> [W, UP],
 		'note_right'	=> [D, RIGHT],
 
-		'note_five1'	=> [A, LEFT],
-		'note_five2'	=> [S, DOWN],
+		'note_five1'	=> [D, NONE],
+		'note_five2'	=> [F, NONE],
 		'note_five3'	=> [SPACE, NONE],
-		'note_five4'	=> [W, UP],
-		'note_five5'	=> [D, LEFT],
+		'note_five4'	=> [J, NONE],
+		'note_five5'	=> [K, NONE],
 
 		'note_six1'		=> [S, NONE],
 		'note_six2'		=> [D, NONE],
@@ -127,10 +128,11 @@ class ClientPrefs {
 		FlxG.save.data.hideTime = hideTime;
 		FlxG.save.data.achievementsMap = Achievements.achievementsMap;
 		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
+		FlxG.save.data.sonicExeShaders = sonicExeShaders;
 		FlxG.save.flush();
 
 		var save:FlxSave = new FlxSave();
-		save.bind('controls_v2', 'ninjamuffin99'); //Placing this in a separate save so that it can be manually deleted without removing your Score and stuff
+		save.bind('controls_v2', 'tposejank'); //Placing this in a separate save so that it can be manually deleted without removing your Score and stuff
 		save.data.customControls = keyBinds;
 		save.flush();
 		FlxG.log.add("Settings saved!");
@@ -209,6 +211,11 @@ class ClientPrefs {
 		{
 			FlxG.sound.muted = FlxG.save.data.mute;
 		}
+
+		if (FlxG.save.data.sonicExeShaders != null)
+			{
+				sonicExeShaders = FlxG.save.data.sonicExeShaders;
+			}
 
 		var save:FlxSave = new FlxSave();
 		save.bind('controls_v2', 'ninjamuffin99');

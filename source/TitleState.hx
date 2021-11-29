@@ -110,7 +110,7 @@ class TitleState extends MusicBeatState
 		swagShader = new ColorSwap();
 		super.create();
 
-		FlxG.save.bind('funkin', 'ninjamuffin99');
+		FlxG.save.bind('funkin_extrakeys', 'tposejank');
 		ClientPrefs.loadPrefs();
 
 		Highscore.load();
@@ -477,9 +477,9 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
 				case 5:
-					createCoolText(['This is a mod to'], -60);
+					createCoolText(['Extra keys mod by'], -60);
 				case 7:
-					addMoreText('This game right below lol', -60);
+					addMoreText('tposejank', -60);
 					logoSpr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
 				case 8:
