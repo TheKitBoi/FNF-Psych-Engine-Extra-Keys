@@ -1,6 +1,8 @@
 # Friday Night Funkin' - Psych Engine
 Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
 
+This modification is not official! This is [Psych Engine With Extra Keys](https://gamebanana.com/mods/333373), intended to add extra keys to [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine).
+
 ## Installation:
 Follow a Friday Night Funkin' source code compilation tutorial, after this you will need to install LuaJIT.
 
@@ -11,6 +13,8 @@ You can do this with: `haxelib install linc_luajit` on a Command prompt/PowerShe
 ## Credits:
 * Shadow Mario - Coding
 * RiverOaken - Arts and Animations
+* bbpanzu - Extra coder of Psych Engine
+* tposejank - Extra keys coder
 
 ### Special Thanks
 * Keoiki - Note Splash Animations
