@@ -55,7 +55,7 @@ class StrumNote extends FlxSprite
 
 		x -= Note.NoteData.getRestPosition(PlayState.SONG.mania);
 
-		if (PlayState.SONG.mania == 8 || PlayState.SONG.mania == 7 || PlayState.SONG.mania == 6)
+		if (PlayState.mania == 8 || PlayState.mania == 7 || PlayState.mania == 6)
 			x -= 25;
 	}
 
