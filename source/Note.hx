@@ -244,13 +244,13 @@ class Note extends FlxSprite
 					animation.addByPrefix(Note.NoteData.getLetter(i) + ' tail', Note.NoteData.getLetter(i) + ' tail');
 				}
 			}
-	
+				
 			ogW = width;
 			ogH = height;
 			if (!isSustainNote)
-				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.SONG.mania)));
+				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.mania)));
 			else
-				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.SONG.mania)), Std.int(ogH * Note.NoteData.getScale(0)));
+				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.mania)), Std.int(ogH * Note.NoteData.getScale(0)));
 			updateHitbox();
 	}
 
@@ -279,16 +279,16 @@ class Note extends FlxSprite
 		if (!isSustainNote)
 		{
 			var animToPlay:String = '';
-			animToPlay = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0));
+			animToPlay = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0));
 			animation.play(animToPlay);
 		}
 
 		if (isSustainNote && prevNote != null)
 		{
-			animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' tail');
+			animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0)) + ' tail');
 			if (prevNote.isSustainNote)
 			{
-				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' hold');
+				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0)) + ' hold');
 				prevNote.updateHitbox();
 			}
 		}
