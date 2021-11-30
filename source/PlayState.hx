@@ -2882,7 +2882,7 @@ class PlayState extends MusicBeatState
 				var newMania:Int = 0;
 
 				newMania = Std.parseInt(value1);
-				if(!Math.isNaN(newMania) && newMania <= 8 && newMania >= 0)
+				if(Math.isNaN(newMania) && newMania < 0 && newMania > 8)
 					newMania = 0;
 
 				changeMania(newMania);
