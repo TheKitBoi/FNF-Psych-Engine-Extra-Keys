@@ -83,9 +83,9 @@ class Note extends FlxSprite
 
 	private function set_noteType(value:String):String {
 		noteSplashTexture = PlayState.SONG.splashSkin;
-		colorSwap.hue = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][0] / 360;
-		colorSwap.saturation = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][1] / 100;
-		colorSwap.brightness = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][2] / 100;
+		colorSwap.hue = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(PlayState.mania, noteData, 0) % Note.NoteData.getAmmo(PlayState.mania)][0] / 360;
+		colorSwap.saturation = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(PlayState.mania, noteData, 0) % Note.NoteData.getAmmo(PlayState.mania)][1] / 100;
+		colorSwap.brightness = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(PlayState.mania, noteData, 0) % Note.NoteData.getAmmo(PlayState.mania)][2] / 100;
 
 		if(noteData > -1 && noteType != value) {
 			switch(value) {
@@ -140,7 +140,7 @@ class Note extends FlxSprite
 			x += swagWidth * (noteData % 4);
 			if(!isSustainNote) { //Doing this 'if' check to fix the warnings on Senpai songs
 				var animToPlay:String = '';
-				animToPlay = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0));
+				animToPlay = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0));
 				animation.play(animToPlay);
 			}
 		}
@@ -156,7 +156,7 @@ class Note extends FlxSprite
 			offsetX += width / 2;
 			copyAngle = false;
 
-			animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' tail');
+			animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0)) + ' tail');
 
 			updateHitbox();
 
@@ -167,7 +167,7 @@ class Note extends FlxSprite
 
 			if (prevNote.isSustainNote)
 			{
-				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, noteData, 0)) + ' hold');
+				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0)) + ' hold');
 
 				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.songSpeed;
 				//if(PlayState.isPixelStage) {

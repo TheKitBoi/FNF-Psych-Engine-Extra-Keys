@@ -163,7 +163,7 @@ class PlayState extends MusicBeatState
 	public var bads:Int = 0;
 	public var shits:Int = 0;
 	
-	
+	public static var mania:Int = 0;
 	
 	private var generatedMusic:Bool = false;
 	public var endingSong:Bool = false;
@@ -231,6 +231,28 @@ class PlayState extends MusicBeatState
 	public static var seenCutscene:Bool = false;
 	public static var deathCounter:Int = 0;
 
+	//week 7 related stuff
+	var tankRolling:FlxSprite;
+	var tankClouds:FlxSprite;
+	var tankSky:FlxSprite;
+	var tankmout:FlxSprite;
+	var tankmouwt:FlxSprite;
+	var tancuk:FlxSprite;
+	var smokeLeft:FlxSprite;
+	var smokeRight:FlxSprite;
+	var tanjcuk:FlxSprite;
+	var tankmouthh:FlxSprite;
+	var tankbop0:FlxSprite;
+	var tank1:FlxSprite;
+	var tank2:FlxSprite;
+	var tank3:FlxSprite;
+	var tank4:FlxSprite;
+	var tank5:FlxSprite;
+	var tankSpeed:Float = FlxG.random.float(5, 7);
+	var tankAngle:Float = FlxG.random.float(-90, 45);
+	var tankX:Int = 400;
+	//end (wow thats a lot)
+
 	public var defaultCamZoom:Float = 1.05;
 
 	// how big to stretch the pixel art assets
@@ -297,6 +319,10 @@ class PlayState extends MusicBeatState
 		persistentUpdate = true;
 		persistentDraw = true;
 
+		mania = SONG.mania;
+		if (mania < 0 || mania > 8)
+			mania = 0;
+
 		if (SONG == null)
 			SONG = Song.loadFromJson('tutorial');
 
@@ -341,6 +367,8 @@ class PlayState extends MusicBeatState
 					curStage = 'school';
 				case 'thorns':
 					curStage = 'schoolEvil';
+				case 'ugh' | 'guns' | 'stress':
+					curStage = 'tank';
 				default:
 					curStage = 'stage';
 			}
@@ -644,8 +672,141 @@ class PlayState extends MusicBeatState
 					bg.scale.set(6, 6);
 					bg.antialiasing = false;
 					add(bg);
+				}				
+			case 'tank':
+				defaultCamZoom = 0.9;
+			
+				tankSky = new FlxSprite(-400, -400).loadGraphic(Paths.image('tankSky', 'week7'));
+				tankSky.antialiasing = true;
+				tankSky.scrollFactor.set(0, 0);
+				tankSky.setGraphicSize(Std.int(tankSky.width * 2.7));
+				tankSky.active = false;
+				add(tankSky);
+			
+				if (!ClientPrefs.lowQuality) {
+					tankClouds = new FlxSprite(-700, -100).loadGraphic(Paths.image('tankClouds', 'week7'));
+					tankClouds.antialiasing = true;
+					tankClouds.scrollFactor.set(0.1, 0.1);
+					tankClouds.active = true;
+					tankClouds.velocity.x = FlxG.random.float(5, 15);
+					add(tankClouds);
 				}
-		}
+			
+				tankmout = new FlxSprite(-300, -20).loadGraphic(Paths.image('tankMountains', 'week7'));
+				tankmout.antialiasing = true;
+				tankmout.scrollFactor.set(0.2, 0.2);
+				tankmout.setGraphicSize(Std.int(tankmout.width * 1.1));
+				tankmout.active = false;
+				tankmout.updateHitbox();
+				add(tankmout);
+			
+				tankmouwt = new FlxSprite(-200, 0).loadGraphic(Paths.image('tankBuildings', 'week7'));
+				tankmouwt.antialiasing = true;
+				tankmouwt.scrollFactor.set(0.3, 0.3);
+				tankmouwt.setGraphicSize(Std.int(tankmouwt.width * 1.1));
+				tankmouwt.active = false;
+				add(tankmouwt);
+			
+				if (!ClientPrefs.lowQuality) {
+					tancuk = new FlxSprite(-200, 0).loadGraphic(Paths.image('tankRuins', 'week7'));
+					tancuk.antialiasing = true;
+					tancuk.scrollFactor.set(0.35, 0.36);
+					tancuk.setGraphicSize(Std.int(tancuk.width * 1.1));
+					tancuk.active = false;
+					add(tancuk);
+				}
+			
+				if (!ClientPrefs.lowQuality) {
+					smokeLeft = new FlxSprite(-200, -100).loadGraphic(Paths.image('smokeLeft', 'week7'));
+					smokeLeft.frames = Paths.getSparrowAtlas('smokeLeft', 'week7');
+					smokeLeft.animation.addByPrefix('idle', 'SmokeBlurLeft', 24, true);
+					smokeLeft.animation.play('idle');
+					smokeLeft.scrollFactor.set (0.4, 0.4);
+					smokeLeft.antialiasing = true;
+					add(smokeLeft);
+				
+					smokeRight = new FlxSprite(1100, -100).loadGraphic(Paths.image('smokeRight', 'week7'));
+					smokeRight.frames = Paths.getSparrowAtlas('smokeRight', 'week7');
+					smokeRight.animation.addByPrefix('idle', 'SmokeRight', 24, true);
+					smokeRight.animation.play('idle');
+					smokeRight.scrollFactor.set (0.4, 0.4);
+					smokeRight.antialiasing = true;
+					add(smokeRight);
+				}
+
+				tanjcuk = new FlxSprite(100, 50);
+				tanjcuk.frames = Paths.getSparrowAtlas('tankWatchtower', 'week7');
+				tanjcuk.animation.addByPrefix('dancey', 'watchtower gradient color instance ', 24, false);
+				tanjcuk.animation.play('dancey');
+				tanjcuk.antialiasing = true;
+				tanjcuk.scrollFactor.set(0.5, 0.5);
+				tanjcuk.setGraphicSize(Std.int(tanjcuk.width * 1.2));
+				tanjcuk.antialiasing = true;
+				add(tanjcuk);
+			
+				tankRolling = new FlxSprite(300,300);
+				tankRolling.frames = Paths.getSparrowAtlas('tankRolling', 'week7');
+				tankRolling.animation.addByPrefix('idle', 'BG tank w lighting instance ', 24, true);
+				tankRolling.scrollFactor.set(0.5, 0.5);
+				tankRolling.antialiasing = true;
+				tankRolling.animation.play('idle');
+				add(tankRolling);
+			
+				tankmouthh = new FlxSprite(-420, -150).loadGraphic(Paths.image('tankGround', 'week7'));
+				tankmouthh.antialiasing = true;
+				tankmouthh.setGraphicSize(Std.int(tankmouthh.width * 1.15));
+				tankmouthh.active = false;
+				tankmouthh.updateHitbox();
+				add(tankmouthh);
+				
+				tankbop0 = new FlxSprite(-500, 650);
+				tankbop0.frames = Paths.getSparrowAtlas('tank0', 'week7');
+				tankbop0.animation.addByPrefix('danceya', 'fg tankhead far right instance', 24, false);
+				tankbop0.animation.play('danceya');
+				tankbop0.antialiasing = true;
+				add(tankbop0); 
+				
+				
+				tank1 = new FlxSprite(-300, 750);
+				tank1.frames = Paths.getSparrowAtlas('tank1', 'week7');
+				tank1.animation.addByPrefix('dietz', 'fg tankhead 5 instance ', 24, false);
+				tank1.animation.play('detz');
+				tank1.scrollFactor.set(2, 0.2);
+				tank1.antialiasing = true;
+				add(tank1);
+				
+				tank2 = new FlxSprite(450, 940);
+				tank2.frames = Paths.getSparrowAtlas('tank2', 'week7');
+				tank2.animation.addByPrefix('idle', 'foreground man 3 instance ', 24, false);
+				tank2.animation.play('idle');
+				tank2.scrollFactor.set(1.5, 1.5);
+				tank2.antialiasing = true;
+				add(tank2);
+				
+				tank4 = new FlxSprite(1300, 900);
+				tank4.frames = Paths.getSparrowAtlas('tank4', 'week7');
+				tank4.animation.addByPrefix('idle', 'fg tankman bobbin 3 instance ', 24, false);
+				tank4.animation.play('idle');
+				tank4.scrollFactor.set(1.5, 1.5);
+				tank4.antialiasing = true;
+				add(tank4);
+			
+				tank5 = new FlxSprite(1620, 700);
+				tank5.frames = Paths.getSparrowAtlas('tank5', 'week7');
+				tank5.animation.addByPrefix('idle', 'fg tankhead far right instance ', 24, false);
+				tank5.animation.play('idle');
+				tank5.scrollFactor.set(1.5, 1.5);
+				tank5.antialiasing = true;
+				add(tank5);
+				
+				tank3 = new FlxSprite(1300, 1200);
+				tank3.frames = Paths.getSparrowAtlas('tank3', 'week7');
+				tank3.animation.addByPrefix('idle', 'fg tankhead 4 instance ', 24, false);
+				tank3.animation.play('idle');
+				tank3.scrollFactor.set(1.5, 1.5);
+				tank3.antialiasing = true;
+				add(tank3);
+	}
 
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';
@@ -1036,7 +1197,9 @@ class PlayState extends MusicBeatState
 				case 'senpai' | 'roses' | 'thorns':
 					if(daSong == 'roses') FlxG.sound.play(Paths.sound('ANGRY'));
 					schoolIntro(doof);
-
+				case 'ugh' | 'guns' | 'stress':
+					startVideo(daSong + 'Cutscene');
+					if (daSong == 'stress') GameOverSubstate.characterName = 'bf-holding-gf-dead';
 				default:
 					startCountdown();
 			}
@@ -1559,11 +1722,11 @@ class PlayState extends MusicBeatState
 			{
 				if(songNotes[1] > -1) { //Real notes
 					var daStrumTime:Float = songNotes[0];
-					var daNoteData:Int = Std.int(songNotes[1] % Note.NoteData.getAmmo(SONG.mania));
+					var daNoteData:Int = Std.int(songNotes[1] % Note.NoteData.getAmmo(mania));
 
 					var gottaHitNote:Bool = section.mustHitSection;
 
-					if (songNotes[1] > (Note.NoteData.getAmmo(SONG.mania) - 1))
+					if (songNotes[1] > (Note.NoteData.getAmmo(mania) - 1))
 					{
 						gottaHitNote = !section.mustHitSection;
 					}
@@ -1699,7 +1862,7 @@ class PlayState extends MusicBeatState
 
 	private function generateStaticArrows(player:Int):Void
 	{
-		for (i in 0...Note.NoteData.getAmmo(SONG.mania))
+		for (i in 0...Note.NoteData.getAmmo(mania))
 		{
 			// FlxG.log.add(i);
 			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
@@ -1733,7 +1896,7 @@ class PlayState extends MusicBeatState
 
 	function changeMania(newValue:Int)
 	{
-		SONG.mania = newValue;
+		mania = newValue;
 
 		for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {alpha: 0}, 1);
 		for (i in 0...opponentStrums.members.length) FlxTween.tween(opponentStrums.members[i], {alpha: 0}, 1);
@@ -2008,6 +2171,8 @@ class PlayState extends MusicBeatState
 						heyTimer = 0;
 					}
 				}
+			case 'tank':
+				moveTank();
 		}
 
 		if(!inCutscene) {
@@ -2226,14 +2391,14 @@ class PlayState extends MusicBeatState
 				var strumAngle:Float = 0;
 				var strumAlpha:Float = 0;
 				if(daNote.mustPress) {
-					if (playerStrums.members[daNote.noteData] == null) daNote.noteData = SONG.mania;	//crash prevention ig?
+					if (playerStrums.members[daNote.noteData] == null) daNote.noteData = mania;	//crash prevention ig?
 
 					strumX = playerStrums.members[daNote.noteData].x;
 					strumY = playerStrums.members[daNote.noteData].y;
 					strumAngle = playerStrums.members[daNote.noteData].angle;
 					strumAlpha = playerStrums.members[daNote.noteData].alpha;
 				} else {
-					if (opponentStrums.members[daNote.noteData] == null) daNote.noteData = SONG.mania;
+					if (opponentStrums.members[daNote.noteData] == null) daNote.noteData = mania;
 
 					strumX = opponentStrums.members[daNote.noteData].x;
 					strumY = opponentStrums.members[daNote.noteData].y;
@@ -3338,7 +3503,7 @@ class PlayState extends MusicBeatState
 		var controlReleaseArray:Array<Bool> = [];
 		var controlHoldArray:Array<Bool> = [];
 
-		switch (SONG.mania) {
+		switch (mania) {
 			case 0:		//1 key
 				controlArray = oneP;
 				controlReleaseArray = oneR;
@@ -3503,7 +3668,7 @@ class PlayState extends MusicBeatState
 			var daAlt = '';
 			if(daNote.noteType == 'Alt Animation') daAlt = '-alt';
 
-			var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, daNote.noteData, 1), 1) + 'miss' + daAlt;
+			var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(mania, daNote.noteData, 1), 1) + 'miss' + daAlt;
 			char.playAnim(animToPlay, true);
 		}
 
@@ -3541,7 +3706,7 @@ class PlayState extends MusicBeatState
 			});*/
 
 			if(boyfriend.hasMissAnimations) {
-				boyfriend.playAnim('sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, direction, 1), 1) + 'miss', true);
+				boyfriend.playAnim('sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(mania, direction, 1), 1) + 'miss', true);
 			}
 			vocals.volume = 0;
 		}
@@ -3568,7 +3733,7 @@ class PlayState extends MusicBeatState
 			}
 
 			var char:Character = dad;
-			var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, note.noteData, 1), 1) + altAnim;
+			var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(mania, note.noteData, 1), 1) + altAnim;
 			if(SONG.notes[curSection].gfSection || note.noteType == 'GF Sing') {
 				char = gf;
 			}
@@ -3584,7 +3749,7 @@ class PlayState extends MusicBeatState
 		if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
 			time += 0.15;
 		}
-		StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % Note.NoteData.getAmmo(SONG.mania), time);
+		StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % Note.NoteData.getAmmo(mania), time);
 		note.hitByOpponent = true;
 
 		callOnLuas('opponentNoteHit', [notes.members.indexOf(note), Math.abs(note.noteData), note.noteType, note.isSustainNote]);
@@ -3639,7 +3804,7 @@ class PlayState extends MusicBeatState
 				var daAlt = '';
 				if(note.noteType == 'Alt Animation') daAlt = '-alt';
 	
-				var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, note.noteData, 1), 1);
+				var animToPlay:String = 'sing' + Note.NoteData.getAnimation(Note.NoteData.getKeyMap(mania, note.noteData, 1), 1);
 
 				if(note.noteType == 'GF Sing') {
 					gf.playAnim(animToPlay + daAlt, true);
@@ -3669,7 +3834,7 @@ class PlayState extends MusicBeatState
 				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
 					time += 0.15;
 				}
-				StrumPlayAnim(false, Std.int(Math.abs(note.noteData)) % Note.NoteData.getAmmo(SONG.mania), time);
+				StrumPlayAnim(false, Std.int(Math.abs(note.noteData)) % Note.NoteData.getAmmo(mania), time);
 			} else {
 				playerStrums.forEach(function(spr:StrumNote)
 				{
@@ -3709,9 +3874,9 @@ class PlayState extends MusicBeatState
 		var skin:String = 'noteSplashes';
 		if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 		
-		var hue:Float = ClientPrefs.arrowHSV[data % Note.NoteData.getAmmo(PlayState.SONG.mania)][0] / 360;
-		var sat:Float = ClientPrefs.arrowHSV[data % Note.NoteData.getAmmo(PlayState.SONG.mania)][1] / 100;
-		var brt:Float = ClientPrefs.arrowHSV[data % Note.NoteData.getAmmo(PlayState.SONG.mania)][2] / 100;
+		var hue:Float = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(mania, data, 0) % Note.NoteData.getAmmo(mania)][0] / 360;
+		var sat:Float = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(mania, data, 0) % Note.NoteData.getAmmo(mania)][1] / 100;
+		var brt:Float = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(mania, data, 0) % Note.NoteData.getAmmo(mania)][2] / 100;
 		if(note != null) {
 			skin = note.noteSplashTexture;
 			hue = note.noteSplashHue;
@@ -3733,6 +3898,14 @@ class PlayState extends MusicBeatState
 		fastCar.velocity.x = 0;
 		fastCarCanDrive = true;
 	}
+
+	function moveTank()
+        {
+            tankAngle += FlxG.elapsed * tankSpeed;
+            tankRolling.angle = tankAngle - 90 + 15;
+            tankRolling.x = tankX + 1500 * Math.cos(Math.PI / 180 * (1 * tankAngle + 180));
+            tankRolling.y = 1300 + 1100 * Math.sin(Math.PI / 180 * (1 * tankAngle + 180));
+        }
 
 	var carTimer:FlxTimer;
 	function fastCarDrive()
@@ -3931,6 +4104,18 @@ class PlayState extends MusicBeatState
 		if(lastBeatHit >= curBeat) {
 			trace('BEAT HIT: ' + curBeat + ', LAST HIT: ' + lastBeatHit);
 			return;
+		}
+
+		if (curStage == 'tank') {
+			if (curBeat % 2 == 0) {
+				tanjcuk.animation.play('dancey');
+				tankbop0.animation.play('danceya');
+				tank1.animation.play('dietz');
+				tank2.animation.play('idle');
+				tank3.animation.play('idle');
+				tank4.animation.play('idle');
+				tank5.animation.play('idle');
+			}
 		}
 
 		if (generatedMusic)

@@ -28,7 +28,7 @@ class NoteSplash extends FlxSprite
 
 	public function setupNoteSplash(x:Float, y:Float, note:Int = 0, texture:String = null, hueColor:Float = 0, satColor:Float = 0, brtColor:Float = 0) {
 		setPosition(x - Note.swagWidth * 0.95, y - Note.swagWidth);
-		setGraphicSize(Std.int(width * sc[PlayState.SONG.mania]));
+		setGraphicSize(Std.int(width * sc[PlayState.mania]));
 
 		alpha = 0.6;
 
@@ -45,11 +45,11 @@ class NoteSplash extends FlxSprite
 		colorSwap.brightness = brtColor;
 
 		var animNum:Int = FlxG.random.int(1, 2);
-		if (animNum == 1) setPosition(x - (Note.swagWidth * 0.95) + 10 * (sc[PlayState.SONG.mania]), y - (Note.swagWidth) + 10 * (sc[PlayState.SONG.mania]));
+		if (animNum == 1) setPosition(x - (Note.swagWidth * 0.95) + 10 * (sc[PlayState.mania]), y - (Note.swagWidth) + 10 * (sc[PlayState.mania]));
 
 		offset.set(10, 10);
 
-		animation.play('note' + Note.NoteData.getKeyMap(PlayState.SONG.mania, note, 0) + '-' + animNum, true);
+		animation.play('note' + Note.NoteData.getKeyMap(PlayState.mania, note, 0) + '-' + animNum, true);
 		animation.curAnim.frameRate = 24 + FlxG.random.int(-2, 2);
 	}
 

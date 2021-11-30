@@ -219,7 +219,7 @@ class ChartingState extends MusicBeatState
 		Paths.destroyLoadedImages();
 		#end
 
-		PlayState.SONG.mania = _song.mania;
+		PlayState.mania = _song.mania;
 
 		#if desktop
 		// Updating Discord Rich Presence
@@ -1189,6 +1189,8 @@ class ChartingState extends MusicBeatState
 	{
 		curStep = recalculateSteps();
 
+		PlayState.mania = _song.mania;
+
 		var gWidth = GRID_SIZE * (Note.NoteData.getAmmo(_song.mania) * 2);
 		camPos.x = -80 + gWidth;
 		strumLine.width = gWidth;
@@ -1209,7 +1211,6 @@ class ChartingState extends MusicBeatState
 		strumLine.y = getYfromStrum((Conductor.songPosition - sectionStartTime()) / zoomList[curZoom] % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps));
 
 		for (i in 0...strumLineNotes.members.length){
-		PlayState.SONG.mania = _song.mania;
 		strumLineNotes.members[i].y = strumLine.y;
 		}
 
@@ -1310,7 +1311,7 @@ class ChartingState extends MusicBeatState
 			if (FlxG.keys.justPressed.ESCAPE)
 			{
 				autosaveSong();
-				LoadingState.loadAndSwitchState(new editors.EditorPlayState(sectionStartTime()));
+				LoadingState.loadAndSwitchState(new editors.EditorPlayState(sectionStartTime(), _song.mania));
 			}
 			if (FlxG.keys.justPressed.ENTER)
 			{

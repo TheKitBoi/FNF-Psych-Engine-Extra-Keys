@@ -1,6 +1,7 @@
 {
 	"song": {
 		"player1": "bf",
+		"mania": 3,
 		"sectionLengths": [],
 		"notes": [
 			{
