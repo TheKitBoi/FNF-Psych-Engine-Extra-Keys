@@ -85,9 +85,9 @@ class StrumNote extends FlxSprite
 			colorSwap.saturation = 0;
 			colorSwap.brightness = 0;
 		} else {
-			colorSwap.hue = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][0] / 360;
-			colorSwap.saturation = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][1] / 100;
-			colorSwap.brightness = ClientPrefs.arrowHSV[noteData % Note.NoteData.getAmmo(PlayState.SONG.mania)][2] / 100;
+			colorSwap.hue = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(PlayState.mania, noteData, 0) % Note.NoteData.getAmmo(PlayState.mania)][0] / 360;
+			colorSwap.saturation = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(PlayState.mania, noteData, 0) % Note.NoteData.getAmmo(PlayState.mania)][1] / 100;
+			colorSwap.brightness = ClientPrefs.arrowHSV[Note.NoteData.getKeyMap(PlayState.mania, noteData, 0) % Note.NoteData.getAmmo(PlayState.mania)][2] / 100;
 
 			if(animation.curAnim.name == 'confirm' && !PlayState.isPixelStage) {
 				centerOrigin();
