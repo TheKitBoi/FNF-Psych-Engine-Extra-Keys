@@ -25,8 +25,8 @@ class StrumNote extends FlxSprite
 		this.noteData = leData;
 		super(x, y);
 
-		var stat:String = Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.SONG.mania, leData, 1), 0);
-		var pres:String = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.SONG.mania, leData, 0));
+		var stat:String = Note.NoteData.getAnimation(Note.NoteData.getKeyMap(PlayState.mania, leData, 1), 0);
+		var pres:String = Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, leData, 0));
 
 		var skin:String = 'NOTE_assets';
 		if(PlayState.isPixelStage) skin = 'PIXEL_' + skin;
