@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.keyboard.FlxKey;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
@@ -389,8 +390,14 @@ class NoteData
 	}
 
 	public static function getRestPosition(mania:Int) {
-		var posRest:Array<Int> = [0, 0, 0, 0, 25, 35, 50, 60, 70];
+		var posRest:Array<Int> = [0, 0, 0, 0, 25, 32, 46, 52, 60];
 
 		return posRest[mania];
+	}
+
+	public static function getLessXStrumNote(mania:Int) {
+	var lessX:Array<Int> = [0, 0, 0, 0, 0, 8, 7, 8, 8];
+
+		return lessX[mania];
 	}
 }

@@ -2,7 +2,6 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.graphics.frames.FlxAtlasFrames;
 
 using StringTools;
 
@@ -47,16 +46,34 @@ class StrumNote extends FlxSprite
 
 	public function postAddedToGroup() {
 		playAnim('static');
-		x += (width  * noteData);
+		switch (PlayState.mania)
+		{
+			case 0:
+				x += width * noteData;
+				x += 150;
+			case 1:
+				x += width * noteData;
+				x += 89;
+			case 2:
+				x += width * noteData;
+			case 3:
+				x += (Note.swagWidth * noteData);
+				x += 20;
+			default:
+				x += ((width - Note.NoteData.getLessXStrumNote(PlayState.mania)) * noteData);
+		}
+
 		//trace((width * Note.NoteData.getScale(PlayState.SONG.mania)) * noteData);
 		x += 50;
 		x += ((FlxG.width / 2) * player);
 		ID = noteData;
 
-		x -= Note.NoteData.getRestPosition(PlayState.SONG.mania);
+		//trace(width);
 
-		if (PlayState.mania == 8 || PlayState.mania == 7 || PlayState.mania == 6)
-			x -= 25;
+		x -= Note.NoteData.getRestPosition(PlayState.mania);
+
+		//if (PlayState.mania == 8 || PlayState.mania == 7 || PlayState.mania == 6)
+		//	x -= 25;
 	}
 
 	override function update(elapsed:Float) {

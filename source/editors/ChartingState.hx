@@ -1434,31 +1434,74 @@ class ChartingState extends MusicBeatState
 			}
 			
 			var cs = getStrumTime(strumLine.y, false) + sectionStartTime();//Conductor.songPosition / Conductor.stepCrochet;
-			
-			if (FlxG.keys.justPressed.ONE){
-				
-				doANoteThing(cs,0,style);
-			}
-			if (FlxG.keys.justPressed.TWO){
-				doANoteThing(cs,1,style);
-			}
-			if (FlxG.keys.justPressed.THREE){
-				doANoteThing(cs,2,style);
-			}
-			if (FlxG.keys.justPressed.FOUR){
-				doANoteThing(cs,3,style);
-			}
-			if (FlxG.keys.justPressed.FIVE){
-				doANoteThing(cs,4,style);
-			}
-			if (FlxG.keys.justPressed.SIX){
-				doANoteThing(cs,5,style);
-			}
-			if (FlxG.keys.justPressed.SEVEN){
-				doANoteThing(cs,6,style);
-			}
-			if (FlxG.keys.justPressed.EIGHT){
-				doANoteThing(cs,7,style);
+
+			switch (_song.mania)//dont talk about this ok i just couldnt use flxkey variables
+			{
+				case 0:
+					if(FlxG.keys.justPressed.ONE)
+						doANoteThing(cs,0,style);
+					if(FlxG.keys.justPressed.TWO)
+						doANoteThing(cs,1,style);
+				case 1:
+					if(FlxG.keys.justPressed.ONE)
+						doANoteThing(cs,0,style);
+					if(FlxG.keys.justPressed.TWO)
+						doANoteThing(cs,1,style);
+					if(FlxG.keys.justPressed.THREE)
+						doANoteThing(cs,2,style);
+					if(FlxG.keys.justPressed.FOUR)
+						doANoteThing(cs,3,style);
+				case 2:
+					if(FlxG.keys.justPressed.ONE)
+						doANoteThing(cs,0,style);
+					if(FlxG.keys.justPressed.TWO)
+						doANoteThing(cs,1,style);
+					if(FlxG.keys.justPressed.THREE)
+						doANoteThing(cs,2,style);
+					if(FlxG.keys.justPressed.FOUR)
+						doANoteThing(cs,3,style);
+					if(FlxG.keys.justPressed.FIVE)
+						doANoteThing(cs,4,style);
+					if(FlxG.keys.justPressed.SIX)
+						doANoteThing(cs,5,style);
+				case 3:
+					if (FlxG.keys.justPressed.ONE)
+						doANoteThing(cs,0,style);
+					if (FlxG.keys.justPressed.TWO)
+						doANoteThing(cs,1,style);
+					if (FlxG.keys.justPressed.THREE)
+						doANoteThing(cs,2,style);
+					if (FlxG.keys.justPressed.FOUR)
+						doANoteThing(cs,3,style);
+					if (FlxG.keys.justPressed.FIVE)
+						doANoteThing(cs,4,style);
+					if (FlxG.keys.justPressed.SIX)
+						doANoteThing(cs,5,style);
+					if (FlxG.keys.justPressed.SEVEN)
+						doANoteThing(cs,6,style);
+					if (FlxG.keys.justPressed.EIGHT)
+						doANoteThing(cs,7,style);
+				case 4:
+					if (FlxG.keys.justPressed.ONE)
+						doANoteThing(cs,0,style);
+					if (FlxG.keys.justPressed.TWO)
+						doANoteThing(cs,1,style);
+					if (FlxG.keys.justPressed.THREE)
+						doANoteThing(cs,2,style);
+					if (FlxG.keys.justPressed.FOUR)
+						doANoteThing(cs,3,style);
+					if (FlxG.keys.justPressed.FIVE)
+						doANoteThing(cs,4,style);
+					if (FlxG.keys.justPressed.SIX)
+						doANoteThing(cs,5,style);
+					if (FlxG.keys.justPressed.SEVEN)
+						doANoteThing(cs,6,style);
+					if (FlxG.keys.justPressed.EIGHT)
+						doANoteThing(cs,7,style);
+					if(FlxG.keys.justPressed.NINE)
+						doANoteThing(cs,8, style);
+					if(FlxG.keys.justPressed.ZERO)
+						doANoteThing(cs,9,style);
 			}
 			
 			
@@ -1537,10 +1580,7 @@ class ChartingState extends MusicBeatState
 				
 				
 				if (curSelectedNote != null){
-					
 					if (FlxG.keys.pressed.ONE){
-						trace("sectime: "+sectionStartTime());
-						trace("datime: "+datime);
 						if(curSelectedNote[1] == 0)curSelectedNote[2] += datime-curSelectedNote[2]-Conductor.stepCrochet;
 						updateGrid();
 					}
@@ -1716,6 +1756,8 @@ class ChartingState extends MusicBeatState
 		#end
 	}
 	function reloadGridLayer() {
+		PlayState.mania = _song.mania;
+
 		gridLayer.clear();
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE + GRID_SIZE * Note.NoteData.getAmmo(_song.mania) * 2, Std.int(GRID_SIZE * 32 * curZoom));
 		gridLayer.add(gridBG);

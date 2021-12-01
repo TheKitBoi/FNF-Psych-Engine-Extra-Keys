@@ -757,8 +757,8 @@ class Controls extends FlxActionSet
 	public var TWO1_P(get, never):Bool; inline function get_TWO1_P() {return _two1P.check();}
 	public var TWO1_R(get, never):Bool; inline function get_TWO1_R() {return _two1R.check();}
 	public var TWO2(get, never):Bool; inline function get_TWO2() {return _two2.check();}
-	public var TWO2_P(get, never):Bool; inline function get_TWO2_P() {return _two1P.check();}
-	public var TWO2_R(get, never):Bool; inline function get_TWO2_R() {return _two1R.check();}
+	public var TWO2_P(get, never):Bool; inline function get_TWO2_P() {return _two2P.check();}
+	public var TWO2_R(get, never):Bool; inline function get_TWO2_R() {return _two2R.check();}
 
 	public var THREE1(get, never):Bool; inline function get_THREE1() {return _three1.check();}
 	public var THREE1_P(get, never):Bool; inline function get_THREE1_P() {return _three1P.check();}
