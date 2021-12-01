@@ -400,4 +400,10 @@ class NoteData
 
 		return lessX[mania];
 	}
+
+	public static function getMiddleScrollSeparator(mania:Int) {
+		var separator:Array<Int> = [0, 0, 1, 1, 2, 2, 2, 3, 3];
+
+		return separator[mania];
+	}
 }

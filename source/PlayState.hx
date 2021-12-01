@@ -1881,8 +1881,10 @@ class PlayState extends MusicBeatState
 			{
 				if(ClientPrefs.middleScroll)
 				{
+					var separator:Int = Note.NoteData.getMiddleScrollSeparator(mania);
+
 					babyArrow.x += 310;
-					if(i > 1) { //Up and Right
+					if(i > separator) { //Up and Right
 						babyArrow.x += FlxG.width / 2 + 25;
 					}
 				}

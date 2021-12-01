@@ -34,6 +34,7 @@ class StrumNote extends FlxSprite
 		frames = Paths.getSparrowAtlas(skin);
 
 		antialiasing = ClientPrefs.globalAntialiasing;
+
 		setGraphicSize(Std.int(width * Note.NoteData.getScale(PlayState.mania)));
 
 		animation.addByPrefix('static', 'arrow' + stat);
@@ -62,16 +63,16 @@ class StrumNote extends FlxSprite
 			default:
 				x += ((width - Note.NoteData.getLessXStrumNote(PlayState.mania)) * noteData);
 		}
-
+	
 		//trace((width * Note.NoteData.getScale(PlayState.SONG.mania)) * noteData);
 		x += 50;
 		x += ((FlxG.width / 2) * player);
 		ID = noteData;
-
+		
 		//trace(width);
-
+	
 		x -= Note.NoteData.getRestPosition(PlayState.mania);
-
+	
 		//if (PlayState.mania == 8 || PlayState.mania == 7 || PlayState.mania == 6)
 		//	x -= 25;
 	}
