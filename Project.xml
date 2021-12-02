@@ -52,9 +52,6 @@
 	<!-- DONT ENABLE THIS -->
 	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
 
-	<!--BRUH -->
-	<define name="BBPANZU_IS_CRING" />
-
 	<!-- <define name="PRELOAD_ALL" /> -->
 	<define name="PRELOAD_ALL" unless="web" />
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL"/>

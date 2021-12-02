@@ -1,4 +1,3 @@
-#if !BBPANZU_IS_CRING
 package;
 
 #if desktop
@@ -401,4 +400,3 @@ class ModMetadata
 		}*/
 	}
 }
-#end
