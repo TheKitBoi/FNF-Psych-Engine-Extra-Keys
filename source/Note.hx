@@ -170,9 +170,14 @@ class Note extends FlxSprite
 			{
 				prevNote.animation.play(Note.NoteData.getLetter(Note.NoteData.getKeyMap(PlayState.mania, noteData, 0)) + ' hold');
 
-				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.songSpeed;
-				//if(PlayState.isPixelStage) {
-					//prevNote.scale.y *= 1.19;
+				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05;
+				if(PlayState.instance != null)
+				{
+					prevNote.scale.y *= PlayState.instance.songSpeed;
+				}
+
+				//if(PlayState.isPixelStage) { no.
+				//	prevNote.scale.y *= 1.19;
 				//}
 				prevNote.updateHitbox();
 				// prevNote.setGraphicSize();
@@ -321,7 +326,7 @@ class Note extends FlxSprite
 				wasGoodHit = true;
 		}
 
-		if (tooLate)
+		if (tooLate && !inEditor)
 		{
 			if (alpha > 0.3)
 				alpha = 0.3;
