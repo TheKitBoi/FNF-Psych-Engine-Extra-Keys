@@ -1438,14 +1438,23 @@ class ChartingState extends MusicBeatState
 			}
 			
 			var conductorTime = Conductor.songPosition + sectionStartTime();//Conductor.songPosition / Conductor.stepCrochet;
-			var controlArray:Array<Bool> = [FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR,
-										   FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX, FlxG.keys.justPressed.SEVEN, FlxG.keys.justPressed.EIGHT];
+			var controlArray:Array<Array<Bool>> = [
+				[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO],
+				[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR],
+				[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR, FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX],
+				[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR, FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX, FlxG.keys.justPressed.SEVEN, FlxG.keys.justPressed.EIGHT],
+				[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR, FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX, FlxG.keys.justPressed.SEVEN, FlxG.keys.justPressed.EIGHT, FlxG.keys.justPressed.NINE, FlxG.keys.justPressed.ZERO],
+				[false],	//All that contain false is me who couldnt think of keybinds for these. seriously, all of these are actually pretty hard to think for.
+				[false],	//If you have an idea for these pls make a pr.
+				[false],
+				[false]
+			];
 
-			if(controlArray.contains(true))
+			if(controlArray[_song.mania].contains(true))
 			{
-				for (i in 0...controlArray.length)
+				for (i in 0...controlArray[_song.mania].length)
 				{
-					if(controlArray[i])
+					if(controlArray[_song.mania][i])
 						doANoteThing(conductorTime, i, style);
 				}
 			}
@@ -1526,14 +1535,23 @@ class ChartingState extends MusicBeatState
 				var datime = (FlxG.sound.music.time - secStart) - (dastrum - secStart); //idk math find out why it doesn't work on any other section other than 0
 				if (curSelectedNote != null)
 				{
-					var controlArray:Array<Bool> = [FlxG.keys.pressed.ONE, FlxG.keys.pressed.TWO, FlxG.keys.pressed.THREE, FlxG.keys.pressed.FOUR,
-												   FlxG.keys.pressed.FIVE, FlxG.keys.pressed.SIX, FlxG.keys.pressed.SEVEN, FlxG.keys.pressed.EIGHT];
+					var controlArray:Array<Array<Bool>> = [
+						[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO],
+						[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR],
+						[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR, FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX],
+						[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR, FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX, FlxG.keys.justPressed.SEVEN, FlxG.keys.justPressed.EIGHT],
+						[FlxG.keys.justPressed.ONE, FlxG.keys.justPressed.TWO, FlxG.keys.justPressed.THREE, FlxG.keys.justPressed.FOUR, FlxG.keys.justPressed.FIVE, FlxG.keys.justPressed.SIX, FlxG.keys.justPressed.SEVEN, FlxG.keys.justPressed.EIGHT, FlxG.keys.justPressed.NINE, FlxG.keys.justPressed.ZERO],
+						[false],
+						[false],
+						[false],
+						[false]
+					];
 
-					if(controlArray.contains(true))
+					if(controlArray[_song.mania].contains(true))
 					{
-						for (i in 0...controlArray.length)
+						for (i in 0...controlArray[_song.mania].length)
 						{
-							if(controlArray[i])
+							if(controlArray[_song.mania][i])
 								doANoteThing(conductorTime, i, style);
 								if(curSelectedNote[1] == 1) curSelectedNote[2] += datime - curSelectedNote[2] - Conductor.stepCrochet;
 						}
@@ -1622,7 +1640,16 @@ class ChartingState extends MusicBeatState
 						data = note.noteData;
 						if(note.mustPress != _song.notes[curSection].mustHitSection)
 						{
-							data += 4;
+							data += Note.NoteData.getAmmo(_song.mania);
+						/**
+						 * -Omg no null objects!
+						 * lets go!! (cheers with hands up)
+						 * *null oject reference*
+						 * wait what
+						 * NOOO
+						 * 
+						 * Called from editors.ChartingState::update editors/ChartingState.hx line 1645
+						 */
 						}
 						strumLineNotes.members[data].playAnim('confirm', true);
 						strumLineNotes.members[data].resetAnim = (note.sustainLength / 1000) + 0.15;
@@ -2199,7 +2226,7 @@ class ChartingState extends MusicBeatState
 		{
 			curRenderedNotes.forEachAlive(function(note:Note)
 			{
-				if (strumLine.overlaps(note) && note.noteData == d%Note.NoteData.getAmmo(_song.mania))	//dafuq is this bbpanzu
+				if (strumLine.overlaps(note) && note.noteData == d % Note.NoteData.getAmmo(_song.mania))	//dafuq is this bbpanzu
 				{
 						trace('tryin to delete note...');
 						if(!delnote) deleteNote(note);

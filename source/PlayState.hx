@@ -289,7 +289,7 @@ class PlayState extends MusicBeatState
 	private var debugKeysCharacter:Array<FlxKey>;
 	
 	// Less laggy controls
-	private var keysArray:Array<Dynamic>;
+	private var keysArray:Array<Array<Dynamic>>;
 
 	override public function create()
 	{
@@ -303,11 +303,74 @@ class PlayState extends MusicBeatState
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
 
-		keysArray = [
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left')),
+		/*	ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left')),
 			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_down')),
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up')),
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'))
+			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up')),		swag reference
+			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'))*/
+		keysArray = [
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_one1'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_two1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_two2'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_three1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_three2')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_three3'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left')),	//SWAGGER SOULS??
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_down')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_five1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_five2')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_five3')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_five4')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_five5'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_six1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_six2')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_six3')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_six4')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_six5')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_six6'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven2')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven3')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven4')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven5')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven6')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_seven7'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight2')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight3')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight4')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight5')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight6')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight7')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_eight8'))
+			],
+			[
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine1')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine2')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine3')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine4')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine5')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine6')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine7')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine8')),
+				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_nine9'))
+			]
 		];
 
 		// For the "Just the Two of Us" achievement
@@ -1340,7 +1403,7 @@ class PlayState extends MusicBeatState
 			var ratio:Float = value / songSpeed; //funny word huh
 			for (note in notes)
 			{
-				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end'))
+				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('tail'))
 				{
 					note.scale.y *= ratio;
 					note.updateHitbox();
@@ -1348,7 +1411,7 @@ class PlayState extends MusicBeatState
 			}
 			for (note in unspawnNotes)
 			{
-				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end'))
+				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('tail'))
 				{
 					note.scale.y *= ratio;
 					note.updateHitbox();
@@ -2071,10 +2134,6 @@ class PlayState extends MusicBeatState
 		opponentStrums.clear();
 		strumLineNotes.clear();
 
-		notes.forEachAlive(function(among:Note) {
-			among.applyManiaChange();
-		});
-
 		generateStaticArrows(0);
 		generateStaticArrows(1);
 	}
@@ -2546,6 +2605,10 @@ class PlayState extends MusicBeatState
 				{
 					daNote.visible = true;
 					daNote.active = true;
+				}
+
+				if (mania != SONG.mania && !daNote.isSustainNote) {
+					daNote.applyManiaChange();
 				}
 
 				// i am so fucking sorry for this if condition
@@ -3734,11 +3797,11 @@ class PlayState extends MusicBeatState
 	{
 		if(key != NONE)
 		{
-			for (i in 0...keysArray.length)
+			for (i in 0...keysArray[mania].length)
 			{
-				for (j in 0...keysArray[i].length)
+				for (j in 0...keysArray[mania][i].length)
 				{
-					if(key == keysArray[i][j])
+					if(key == keysArray[mania][i][j])
 					{
 						return i;
 					}
@@ -3749,97 +3812,34 @@ class PlayState extends MusicBeatState
 	}
 
 	// Hold notes
-	private function keyShit():Void
+	private function keyShit():Void	//among
 	{
 		var one = [controls.ONE1];
-		var oneP = [controls.ONE1_P];
-		var oneR = [controls.ONE1_R];
-
 		var two = [controls.TWO1, controls.TWO2];
-		var twoP = [controls.TWO1_P, controls.TWO2_P];
-		var twoR = [controls.TWO1_R, controls.TWO2_R];
-
 		var thr = [controls.THREE1, controls.THREE2, controls.THREE3];
-		var thrP = [controls.THREE1_P, controls.THREE2_P, controls.THREE3_P];
-		var thrR = [controls.THREE1_R, controls.THREE2_R, controls.THREE3_R];
-
 		var fiv = [controls.FIVE1, controls.FIVE2, controls.FIVE3, controls.FIVE4, controls.FIVE5];
-		var fivP = [controls.FIVE1_P, controls.FIVE2_P, controls.FIVE3_P, controls.FIVE4_P, controls.FIVE5_P];
-		var fivR = [controls.FIVE1_R, controls.FIVE2_R, controls.FIVE3_R, controls.FIVE4_R, controls.FIVE5_R];
-
 		var six = [controls.SIX1, controls.SIX2, controls.SIX3, controls.SIX4, controls.SIX5, controls.SIX6];
-		var sixP = [controls.SIX1_P, controls.SIX2_P, controls.SIX3_P, controls.SIX4_P, controls.SIX5_P, controls.SIX6_P];
-		var sixR = [controls.SIX1_R, controls.SIX2_R, controls.SIX3_R, controls.SIX4_R, controls.SIX5_R, controls.SIX6_R];
-
 		var sev = [controls.SEVEN1, controls.SEVEN2, controls.SEVEN3, controls.SEVEN4, controls.SEVEN5, controls.SEVEN6, controls.SEVEN7];
-		var sevP = [controls.SEVEN1_P, controls.SEVEN2_P, controls.SEVEN3_P, controls.SEVEN4_P, controls.SEVEN5_P, controls.SEVEN6_P, controls.SEVEN7_P];
-		var sevR = [controls.SEVEN1_R, controls.SEVEN2_R, controls.SEVEN3_R, controls.SEVEN4_R, controls.SEVEN5_R, controls.SEVEN6_R, controls.SEVEN7_R];
-
 		var eig = [controls.EIGHT1, controls.EIGHT2, controls.EIGHT3, controls.EIGHT4, controls.EIGHT5, controls.EIGHT6, controls.EIGHT7, controls.EIGHT8];
-		var eigP = [controls.EIGHT1_P, controls.EIGHT2_P, controls.EIGHT3_P, controls.EIGHT4_P, controls.EIGHT5_P, controls.EIGHT6_P, controls.EIGHT7_P, controls.EIGHT8_P];
-		var eigR = [controls.EIGHT1_R, controls.EIGHT2_R, controls.EIGHT3_R, controls.EIGHT4_R, controls.EIGHT5_R, controls.EIGHT6_R, controls.EIGHT7_R, controls.EIGHT8_R];
-
 		var nin = [controls.NINE1, controls.NINE2, controls.NINE3, controls.NINE4, controls.NINE5, controls.NINE6, controls.NINE7, controls.NINE8, controls.NINE9];
-		var ninP = [controls.NINE1_P, controls.NINE2_P, controls.NINE3_P, controls.NINE4_P, controls.NINE5_P, controls.NINE6_P, controls.NINE7_P, controls.NINE8_P, controls.NINE9_P];
-		var ninR = [controls.NINE1_R, controls.NINE2_R, controls.NINE3_R, controls.NINE4_R, controls.NINE5_R, controls.NINE6_R, controls.NINE7_R, controls.NINE8_R, controls.NINE9_R];
 
 		// HOLDING
 		var up = controls.NOTE_UP;
 		var right = controls.NOTE_RIGHT;
 		var down = controls.NOTE_DOWN;
 		var left = controls.NOTE_LEFT;
-
-		var upP = controls.NOTE_UP_P;
-		var rightP = controls.NOTE_RIGHT_P;
-		var downP = controls.NOTE_DOWN_P;
-		var leftP = controls.NOTE_LEFT_P;
-
-		var upR = controls.NOTE_UP_R;
-		var rightR = controls.NOTE_RIGHT_R;
-		var downR = controls.NOTE_DOWN_R;
-		var leftR = controls.NOTE_LEFT_R;
-
-		var controlArray:Array<Bool> = [];
-		var controlReleaseArray:Array<Bool> = [];
 		var controlHoldArray:Array<Bool> = [];
 
 		switch (mania) {
-			case 0:		//1 key
-				controlArray = oneP;
-				controlReleaseArray = oneR;
-				controlHoldArray = one;
-			case 1:		//2 keys
-				controlArray = twoP;
-				controlReleaseArray = twoR;
-				controlHoldArray = two;
-			case 2:		//3 keys
-				controlArray = thrP;
-				controlReleaseArray = thrR;
-				controlHoldArray = thr;
-			case 3: 	//4 keys
-				controlArray = [leftP, downP, upP, rightP];
-				controlReleaseArray = [leftR, downR, upR, rightR];
-				controlHoldArray = [left, down, up, right];
-			case 4:		//5 keys
-				controlArray = fivP;
-				controlReleaseArray = fivR;
-				controlHoldArray = fiv;
-			case 5:		//6 keys
-				controlArray = sixP;
-				controlReleaseArray = sixR;
-				controlHoldArray = six;
-			case 6:		//7 keys
-				controlArray = sevP;
-				controlReleaseArray = sevR;
-				controlHoldArray = sev;
-			case 7:		//8 keys
-				controlArray = eigP;
-				controlReleaseArray = eigR;
-				controlHoldArray = eig;
-			case 8:		//9 keys
-				controlArray = ninP;
-				controlReleaseArray = ninR;
-				controlHoldArray = nin;
+			case 0: controlHoldArray = one;
+			case 1: controlHoldArray = two;
+			case 2: controlHoldArray = thr;
+			case 3: controlHoldArray = [left, down, up, right];
+			case 4: controlHoldArray = fiv;
+			case 5:	controlHoldArray = six;
+			case 6: controlHoldArray = sev;
+			case 7: controlHoldArray = eig;
+			case 8: controlHoldArray = nin;
 		}
 
 		// FlxG.watch.addQuick('asdfa', upP);

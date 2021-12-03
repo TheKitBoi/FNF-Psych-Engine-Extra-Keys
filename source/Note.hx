@@ -74,6 +74,9 @@ class Note extends FlxSprite
 	var ogW:Float;
 	var ogH:Float;
 
+	var defaultWidth:Float = 0;
+	var defaultHeight:Float = 0;
+
 	private function set_texture(value:String):String {
 		if(texture != value) {
 			reloadNote('', value);
@@ -220,6 +223,10 @@ class Note extends FlxSprite
 		var lastScaleY:Float = scale.y;
 		var blahblah:String = arraySkin.join('/');
 		frames = Paths.getSparrowAtlas(blahblah);
+
+		defaultWidth = width;
+		defaultHeight = height;
+
 		loadNoteAnims();
 		antialiasing = ClientPrefs.globalAntialiasing;
 		if(isSustainNote) {
@@ -254,9 +261,9 @@ class Note extends FlxSprite
 			ogW = width;
 			ogH = height;
 			if (!isSustainNote)
-				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.mania)));
+				setGraphicSize(Std.int(defaultWidth * Note.NoteData.getScale(PlayState.mania)));
 			else
-				setGraphicSize(Std.int(ogW * Note.NoteData.getScale(PlayState.mania)), Std.int(ogH * Note.NoteData.getScale(0)));
+				setGraphicSize(Std.int(defaultWidth * Note.NoteData.getScale(PlayState.mania)), Std.int(defaultHeight * Note.NoteData.getScale(0)));
 			updateHitbox();
 	}
 
