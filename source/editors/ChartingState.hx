@@ -1641,15 +1641,6 @@ class ChartingState extends MusicBeatState
 						if(note.mustPress != _song.notes[curSection].mustHitSection)
 						{
 							data += Note.NoteData.getAmmo(_song.mania);
-						/**
-						 * -Omg no null objects!
-						 * lets go!! (cheers with hands up)
-						 * *null oject reference*
-						 * wait what
-						 * NOOO
-						 * 
-						 * Called from editors.ChartingState::update editors/ChartingState.hx line 1645
-						 */
 						}
 						strumLineNotes.members[data].playAnim('confirm', true);
 						strumLineNotes.members[data].resetAnim = (note.sustainLength / 1000) + 0.15;

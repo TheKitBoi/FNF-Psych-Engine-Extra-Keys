@@ -3812,7 +3812,7 @@ class PlayState extends MusicBeatState
 	}
 
 	// Hold notes
-	private function keyShit():Void	//among
+	private function keyShit():Void
 	{
 		var one = [controls.ONE1];
 		var two = [controls.TWO1, controls.TWO2];
@@ -4566,7 +4566,7 @@ class PlayState extends MusicBeatState
 		var usedPractice:Bool = (ClientPrefs.getGameplaySetting('practice', false) || ClientPrefs.getGameplaySetting('botplay', false));
 		for (i in 0...achievesToCheck.length) {
 			var achievementName:String = achievesToCheck[i];
-			if(!Achievements.isAchievementUnlocked(achievementName)) {
+			if(!Achievements.isAchievementUnlocked(achievementName) && !cpuControlled) {
 				var unlock:Bool = false;
 				switch(achievementName)
 				{
