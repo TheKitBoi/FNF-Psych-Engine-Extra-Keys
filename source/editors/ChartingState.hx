@@ -1658,7 +1658,7 @@ class ChartingState extends MusicBeatState
 								soundToPlay = 'GF_' + Std.string(data + 1);
 							}
 							
-							FlxG.sound.play(Paths.sound(soundToPlay)).pan = note.noteData < 4? -0.3:0.3;//would be coolio
+							FlxG.sound.play(Paths.sound(soundToPlay)).pan = note.noteData < Note.NoteData.getAmmo(_song.mania)? -0.3:0.3;//would be coolio
 							playedSound[data] = true;
 						}
 					
