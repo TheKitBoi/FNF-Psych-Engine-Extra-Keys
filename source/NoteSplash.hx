@@ -50,7 +50,7 @@ class NoteSplash extends FlxSprite
 		offset.set(10, 10);
 
 		animation.play('note' + Note.NoteData.getKeyMap(PlayState.mania, note, 0) + '-' + animNum, true);
-		animation.curAnim.frameRate = 24 + FlxG.random.int(-2, 2);
+		if(animation.curAnim != null)animation.curAnim.frameRate = 24 + FlxG.random.int(-2, 2);
 	}
 
 	function loadAnims(skin:String) {
@@ -69,7 +69,7 @@ class NoteSplash extends FlxSprite
 	}
 
 	override function update(elapsed:Float) {
-		if(animation.curAnim.finished) kill();
+		if(animation.curAnim != null)if(animation.curAnim.finished) kill();
 
 		super.update(elapsed);
 	}
