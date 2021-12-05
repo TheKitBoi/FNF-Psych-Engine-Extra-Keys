@@ -390,7 +390,7 @@ class NoteData
 	}
 
 	public static function getScale(mania:Int) {
-		var scales:Array<Float> = [0.9, 0.85, 0.8, 0.75, 0.66, 0.6, 0.55, 0.50, 0.46];
+		var scales:Array<Float> = [0.9, 0.85, 0.8, 0.7, 0.66, 0.6, 0.55, 0.50, 0.46];
 
 		return scales[mania];
 	}

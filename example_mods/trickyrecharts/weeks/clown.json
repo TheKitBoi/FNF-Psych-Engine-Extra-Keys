@@ -1,0 +1,48 @@
+{
+	"storyName": "Clown",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"weekCharacters": [
+		"MenuTricky",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Improbable-outest",
+			"trickymask",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Madness",
+			"tricky",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Hellclown",
+			"helltricky",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Clown"
+}

@@ -2616,6 +2616,7 @@ class PlayState extends MusicBeatState
 				var strumY:Float = 0;
 				var strumAngle:Float = 0;
 				var strumAlpha:Float = 0;
+				var strumHeight:Float = 0;
 				if(daNote.mustPress) {
 					if (playerStrums.members[daNote.noteData] == null) daNote.noteData = mania;	//crash prevention ig?
 
@@ -2623,6 +2624,7 @@ class PlayState extends MusicBeatState
 					strumY = playerStrums.members[daNote.noteData].y;
 					strumAngle = playerStrums.members[daNote.noteData].angle;
 					strumAlpha = playerStrums.members[daNote.noteData].alpha;
+					strumHeight = playerStrums.members[daNote.noteData].height;
 				} else {
 					if (opponentStrums.members[daNote.noteData] == null) daNote.noteData = mania;
 
@@ -2630,13 +2632,14 @@ class PlayState extends MusicBeatState
 					strumY = opponentStrums.members[daNote.noteData].y;
 					strumAngle = opponentStrums.members[daNote.noteData].angle;
 					strumAlpha = opponentStrums.members[daNote.noteData].alpha;
+					strumHeight = opponentStrums.members[daNote.noteData].height;
 				}
 
 				strumX += daNote.offsetX;
 				strumY += daNote.offsetY;
 				strumAngle += daNote.offsetAngle;
 				strumAlpha *= daNote.multAlpha;
-				var center:Float = strumY + Note.swagWidth / 2;
+				var center:Float = strumY + strumHeight / 2;
 
 				if(daNote.copyX) {
 					daNote.x = strumX;
@@ -2652,7 +2655,8 @@ class PlayState extends MusicBeatState
 						daNote.y = (strumY + 0.45 * (Conductor.songPosition - daNote.strumTime) * roundedSpeed);
 						if (daNote.isSustainNote && !ClientPrefs.keSustains) {
 							//Jesus fuck this took me so much mother fucking time AAAAAAAAAA
-							if (daNote.animation.curAnim.name.endsWith('end')) {
+							/* no.
+							if (daNote.animation.curAnim.name.endsWith('tail')) {
 								daNote.y += 10.5 * (fakeCrochet / 400) * 1.5 * roundedSpeed + (46 * (roundedSpeed - 1));
 								daNote.y -= 46 * (1 - (fakeCrochet / 600)) * roundedSpeed;
 								if(PlayState.isPixelStage) {
@@ -2660,9 +2664,9 @@ class PlayState extends MusicBeatState
 								} else {
 									daNote.y -= 19;
 								}
-							} 
-							daNote.y += (Note.swagWidth / 2) - (60.5 * (roundedSpeed - 1));
-							daNote.y += 27.5 * ((SONG.bpm / 100) - 1) * (roundedSpeed - 1);
+							}*/
+							daNote.y += (strumHeight / 2) - (60.5 * (roundedSpeed - 1));
+							daNote.y += (27.5 * ((SONG.bpm / 100) - 1) * (roundedSpeed - 1)) * Note.NoteData.getScale(mania);
 
 							if(daNote.mustPress || !daNote.ignoreNote)
 							{
