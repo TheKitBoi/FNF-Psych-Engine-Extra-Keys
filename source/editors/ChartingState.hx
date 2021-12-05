@@ -1655,7 +1655,7 @@ class ChartingState extends MusicBeatState
 						if((playSoundBf.checked && note.mustPress) || (playSoundDad.checked && !note.mustPress)){
 							var soundToPlay = 'ChartingTick';
 							if(_song.player1 == 'gf') { //Easter egg
-								soundToPlay = 'GF_' + Std.string(data + 1);
+								soundToPlay = 'GF_' + ((data + 1) % 4);
 							}
 							
 							FlxG.sound.play(Paths.sound(soundToPlay)).pan = note.noteData < Note.NoteData.getAmmo(_song.mania)? -0.3:0.3;//would be coolio
