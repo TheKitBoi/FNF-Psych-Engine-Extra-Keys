@@ -33,12 +33,13 @@ jobs:
           haxelib install hxcpp > nul
           haxelib install lime
           haxelib install openfl
-          haxelib --never install flixel
+          haxelib install flixel
           haxelib run lime setup flixel
           haxelib run lime setup
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install flixel-addons
+          haxelib install newgrounds
           haxelib install tjson
           haxelib install hxjsonast
           haxelib install linc_luajit
