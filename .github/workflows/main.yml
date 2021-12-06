@@ -45,6 +45,7 @@ jobs:
           haxelib install linc_luajit
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
+          haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib install hxcpp-debug-server
           haxelib list
