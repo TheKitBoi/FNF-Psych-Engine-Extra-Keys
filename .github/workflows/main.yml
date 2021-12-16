@@ -59,7 +59,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: linuxBuild
-          path: 'export'
+          path: export/release/linux/bin
   buildWindows:
     runs-on: windows-latest
     
@@ -102,7 +102,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: windowsBuild
-          path: export
+          path: export/release/windows/bin
   buildMac:
     runs-on: macos-latest
 
@@ -144,4 +144,4 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: macBuild
-          path: export
+          path: export/release/macos/bin
